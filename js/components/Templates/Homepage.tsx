@@ -1,7 +1,9 @@
+import Hero from "../Parts/Hero";
+
 function Homepage() {
     return ( 
         <div id="Homepage">
-            Homepage
+            <Hero/>
         </div>
      );
 }
