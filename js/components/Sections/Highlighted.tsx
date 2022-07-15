@@ -1,4 +1,4 @@
-import { HighlightedSectionData } from "../../utils/types/HomepageData";
+import { HighlightedSectionData } from "../../utils/types/GlobalData";
 import HighlightedCard from "../Parts/HighlightedCard";
 
 interface Props {

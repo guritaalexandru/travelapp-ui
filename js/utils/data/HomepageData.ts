@@ -3,7 +3,7 @@ import {
     HeroSectionData, 
     ArticleSectionData, 
     SocialSectionData 
-} from "../types/HomepageData";
+} from "../types/GlobalData";
 
 const heroSectionData: HeroSectionData = {
     title: ' Homepage Hero Title',

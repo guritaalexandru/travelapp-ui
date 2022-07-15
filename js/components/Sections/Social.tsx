@@ -1,4 +1,4 @@
-import { SocialSectionData } from "../../utils/types/HomepageData";
+import { SocialSectionData } from "../../utils/types/GlobalData";
 import { INSTAGRAM_LINK, FACEBOOK_LINK } from "../../utils/constants/generalConstants"
 import FacebookSVG from '../SVG/FacebookSVG';
 import InstagramSVG from '../SVG/InstagramSVG';

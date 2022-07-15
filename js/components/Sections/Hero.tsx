@@ -1,6 +1,6 @@
 import ButtonCTA from "../Parts/ButtonCTA";
 import Image from "next/image";
-import { HeroSectionData } from "../../utils/types/HomepageData";
+import { HeroSectionData } from "../../utils/types/GlobalData";
 
 interface Props {
     content: HeroSectionData;

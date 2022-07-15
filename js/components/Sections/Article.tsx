@@ -1,5 +1,5 @@
 import ButtonCTA from "../Parts/ButtonCTA";
-import { ArticleSectionData } from "../../utils/types/HomepageData";
+import { ArticleSectionData } from "../../utils/types/GlobalData";
 import Image from "next/image";
 
 interface Props {

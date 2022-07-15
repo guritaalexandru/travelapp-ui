@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { HighlightedCardData } from '../../utils/types/HomepageData'
+import { HighlightedCardData } from '../../utils/types/GlobalData'
 import ButtonCTA from "./ButtonCTA";
 
 interface Props {
