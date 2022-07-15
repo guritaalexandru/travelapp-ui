@@ -1,12 +1,31 @@
 import ButtonCTA from "../Parts/ButtonCTA";
+import Image from "next/image";
+import { HeroSectionData } from "../../utils/types/HomepageData";
 
-function Hero(props) {
+interface Props {
+    content: HeroSectionData;
+}
+
+function Hero({ content }: Props) {
     return (
         <section id="HeroSection">
-            <h1 className="text-center text-5xl text-blue-700">
-                This is the Hero Section
-            </h1>
-            <ButtonCTA href="/call-to-action-link" text="Call To Action" type="primary" />
+            <div className="relative">
+                <div className="background-image">
+                    <Image src={content.imgHref} alt={content.imgAlt}
+                        layout="fill"
+                        objectFit="cover"
+                    />
+                </div>
+                <div className="full-container flex flex-col justify-end h-120 2xl:h-96">
+                    <h1 className="text-5xl text-white mb-6 font-bold">
+                        {content.title}
+                    </h1>
+                    <p className="text-xl text-white mb-6">
+                        {content.description}
+                    </p>
+                    <ButtonCTA href={content.buttonHref} text={content.buttonText} type="primary" />
+                </div>
+            </div>
         </section>
     );
 }
