@@ -1,11 +1,11 @@
 import { 
     HighlightedSectionData, 
-    HeroSectionData, 
+    WithButtonHeroSectionData, 
     ArticleSectionData, 
     SocialSectionData 
 } from "../types/GlobalData";
 
-const heroSectionData: HeroSectionData = {
+const heroSectionData: WithButtonHeroSectionData = {
     title: ' Homepage Hero Title',
     description: 'Description',
     buttonText: 'Hero Button Text',

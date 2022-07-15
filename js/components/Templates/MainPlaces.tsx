@@ -10,9 +10,9 @@ import {
     socialSectionData
 } from "../../utils/data/PlacesPageData";
 
-function Places() {
+function MainPlaces() {
     return (
-        <div id="Places">
+        <div id="MainPlaces">
             <Hero content={heroSectionData} />
             <Article content={articleSectionData01} />
             <Article content={articleSectionData02} />
@@ -22,4 +22,4 @@ function Places() {
     );
 }
 
-export default Places;
+export default MainPlaces;

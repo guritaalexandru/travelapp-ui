@@ -1,10 +1,13 @@
 interface HeroSectionData {
     title: string,
     description: string,
-    buttonText: string,
-    buttonHref: string,
     imgHref: string,
     imgAlt: string,
+}
+
+interface WithButtonHeroSectionData extends HeroSectionData {
+    buttonText: string,
+    buttonHref: string,
 }
 
 interface HighlightedSectionData {
@@ -36,6 +39,7 @@ interface SocialSectionData {
 
 export {
     HeroSectionData,
+    WithButtonHeroSectionData, 
     HighlightedSectionData,
     HighlightedCardData,
     ArticleSectionData,
