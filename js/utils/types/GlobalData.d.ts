@@ -1,4 +1,20 @@
+interface StaticPath {
+    params: {
+        pid: string;
+    }
+};
+
+interface DynamicPageData {
+    id: string;
+    title: string;
+    sections: SectionData[];
+}
+
+type SectionData = HeroSectionData | ArticleSectionData | SocialSectionData;
+
+type SectionType = 'HeroSection' | 'ArticleSection' | 'SocialSection';
 interface HeroSectionData {
+    type: 'HeroSection';
     title: string,
     description: string,
     imgHref: string,
@@ -23,6 +39,7 @@ interface HighlightedCardData {
 }
 
 interface ArticleSectionData {
+    type: 'ArticleSection';
     id: number;
     title: string;
     description: string;
@@ -34,10 +51,14 @@ interface ArticleSectionData {
 }
 
 interface SocialSectionData {
+    type: 'SocialSection';
     title: string;
 }
 
 export {
+    StaticPath,
+    DynamicPageData,
+    SectionData,
     HeroSectionData,
     WithButtonHeroSectionData, 
     HighlightedSectionData,

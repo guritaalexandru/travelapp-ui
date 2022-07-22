@@ -1,10 +1,13 @@
 import { 
     HeroSectionData, 
     ArticleSectionData, 
-    SocialSectionData 
+    SocialSectionData,
+    SectionData,
+    DynamicPageData
 } from "../types/GlobalData";
 
 const heroSectionData: HeroSectionData = {
+    type: 'HeroSection',
     title: ' Places Hero Title',
     description: 'Description',
     imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
@@ -14,6 +17,7 @@ const heroSectionData: HeroSectionData = {
 
 const articleSectionData01: ArticleSectionData = {
     id: 1,
+    type: 'ArticleSection',
     title: 'Best places to see',
     description: 'Article Description 1',
     imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder1.png',
@@ -25,6 +29,7 @@ const articleSectionData01: ArticleSectionData = {
 
 const articleSectionData02: ArticleSectionData = {
     id: 2,
+    type: 'ArticleSection',
     title: 'Explore the city',
     description: 'Article Description 2',
     imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder2.png',
@@ -36,6 +41,7 @@ const articleSectionData02: ArticleSectionData = {
 
 const articleSectionData03: ArticleSectionData = {
     id: 3,
+    type: 'ArticleSection',
     title: 'Adventure in the countryside',
     description: 'Article Description 3',
     imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder3.png',
@@ -46,13 +52,48 @@ const articleSectionData03: ArticleSectionData = {
 };
 
 const socialSectionData: SocialSectionData = {
+    type: 'SocialSection',
     title: 'Social Title',
 };
+
+const place1SectionsData : SectionData[] = [
+    heroSectionData,
+    articleSectionData01,
+    articleSectionData02,
+    articleSectionData03,
+    socialSectionData,
+]
+
+const place1PageData : DynamicPageData = {
+    id: 'best',
+    title: 'Best places',
+    sections: place1SectionsData,
+}
+
+const place2PageData : DynamicPageData = {
+    id: 'countryside',
+    title: 'Countryside',
+    sections: place1SectionsData,
+}
+
+const place3PageData : DynamicPageData = {
+    id: 'city',
+    title: 'Cities',
+    sections: place1SectionsData,
+}
+
+const allPlacesPagesData : DynamicPageData[] = [
+    place1PageData,
+    place2PageData,
+    place3PageData,
+]
 
 export {
     heroSectionData,
     articleSectionData01,
     articleSectionData02,
     articleSectionData03,
-    socialSectionData
+    socialSectionData,
+    place1PageData,
+    allPlacesPagesData,
 }
