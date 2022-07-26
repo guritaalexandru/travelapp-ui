@@ -1,10 +1,10 @@
-import Hero from "../Sections/Hero";
+import T1Hero from "../Sections/T1Hero";
 import Highlighted from "../Sections/Highlighted";
 import Article from "../Sections/Article";
 import Social from "../Sections/Social";
 
 import {
-    heroSectionData,
+    t1HeroSectionData,
     highlightedSectionData,
     resourceBasicPreview01,
     resourceBasicPreview02,
@@ -15,7 +15,7 @@ import {
 function Homepage() {
     return (
         <div id="Homepage">
-            <Hero content={heroSectionData} />
+            <T1Hero content={t1HeroSectionData} />
             <Highlighted content={highlightedSectionData} />
             <Article content={resourceBasicPreview01} />
             <Article content={resourceBasicPreview02} />
