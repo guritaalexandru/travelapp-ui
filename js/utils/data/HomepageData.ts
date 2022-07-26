@@ -1,15 +1,15 @@
 import { 
     HighlightedSectionData, 
-    WithButtonHeroSectionData, 
+    WithButtonT1HeroSectionData, 
     ResourceBasicPreviewData, 
     SocialSectionData 
 } from "../types/GlobalData";
 
-import herosJson from "./HeroJson";
+import t1HerosJson from "./T1HeroJson";
 import resourceBasicPreviewsJson from "./ResourceBasicPreviewJson";
 import socialJson from "./SocialJson";
 
-const heroSectionData: WithButtonHeroSectionData = herosJson[0];
+const t1HeroSectionData: WithButtonT1HeroSectionData = t1HerosJson[0];
 
 const highlightedSectionData: HighlightedSectionData = {
     highlightedCards: [
@@ -46,7 +46,7 @@ const resourceBasicPreview03: ResourceBasicPreviewData = resourceBasicPreviewsJs
 const socialSectionData: SocialSectionData = socialJson[0];
 
 export {
-    heroSectionData,
+    t1HeroSectionData,
     highlightedSectionData,
     resourceBasicPreview01,
     resourceBasicPreview02,

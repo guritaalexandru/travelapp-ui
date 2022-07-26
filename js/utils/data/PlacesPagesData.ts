@@ -2,7 +2,8 @@ import {
     DynamicPageData
 } from "../types/GlobalData";
 
-import herosJson from "./HeroJson";
+import t1HerosJson from "./T1HeroJson";
+import t2HerosJson from "./T2HeroJson";
 import resourceBasicPreviewsJson from "./ResourceBasicPreviewJson";
 import socialJson from "./SocialJson";
 
@@ -11,7 +12,7 @@ const allPlacesPagesData : DynamicPageData[] = [
         id: 'best',
         title: 'Best places',
         sections: [
-            herosJson[3],
+            t1HerosJson[3],
             resourceBasicPreviewsJson[3],
             resourceBasicPreviewsJson[4],
             resourceBasicPreviewsJson[5],
@@ -22,7 +23,7 @@ const allPlacesPagesData : DynamicPageData[] = [
         id: 'countryside',
         title: 'Countryside',
         sections: [
-            herosJson[4],
+            t1HerosJson[4],
             resourceBasicPreviewsJson[3],
             resourceBasicPreviewsJson[4],
             resourceBasicPreviewsJson[5],
@@ -33,10 +34,27 @@ const allPlacesPagesData : DynamicPageData[] = [
         id: 'city',
         title: 'Cities',
         sections: [
-            herosJson[5],
+            t1HerosJson[5],
             resourceBasicPreviewsJson[3],
             resourceBasicPreviewsJson[4],
             resourceBasicPreviewsJson[5],
+            socialJson[1]
+        ],
+    },
+    {
+        id: 'brasov',
+        title: 'Brasov',
+        sections: [
+            t2HerosJson[0],
+            socialJson[1]
+        ],
+    },
+    {
+        id: 'alba-iulia',
+        title: 'Alba Iulia',
+        sections: [
+            t2HerosJson[1],
+
             socialJson[1]
         ],
     },

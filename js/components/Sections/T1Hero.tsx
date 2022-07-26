@@ -1,16 +1,16 @@
 import ButtonCTA from "../Parts/ButtonCTA";
 import Image from "next/image";
-import { HeroSectionData, WithButtonHeroSectionData } from "../../utils/types/GlobalData";
+import { T1HeroSectionData, WithButtonT1HeroSectionData } from "../../utils/types/GlobalData";
 
 interface Props {
-    content: HeroSectionData | WithButtonHeroSectionData;
+    content: T1HeroSectionData | WithButtonT1HeroSectionData;
 }
 
-function Hero({ content }: Props) {
+function T1Hero({ content }: Props) {
     const hasButton = 'buttonText' in content;
 
     return (
-        <section id="HeroSection">
+        <section id="T1HeroSection">
             <div className="relative">
                 <div className="background-image">
                     <Image src={content.imgHref} alt={content.imgAlt}
@@ -32,4 +32,4 @@ function Hero({ content }: Props) {
     );
 }
 
-export default Hero;
+export default T1Hero;

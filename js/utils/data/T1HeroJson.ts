@@ -1,11 +1,11 @@
 import { 
-    WithButtonHeroSectionData, 
+    WithButtonT1HeroSectionData, 
 } from "../types/GlobalData";
 
-const herosJson : WithButtonHeroSectionData[] = [
+const t1HerosJson : WithButtonT1HeroSectionData[] = [
     {
         id: '0',
-        type: 'HeroSection',
+        type: 'T1HeroSection',
         title: ' Homepage Hero Title',
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
@@ -15,7 +15,7 @@ const herosJson : WithButtonHeroSectionData[] = [
     },
     {
         id: '1',
-        type: 'HeroSection',
+        type: 'T1HeroSection',
         title: ' Articles Hero Title',
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
@@ -25,7 +25,7 @@ const herosJson : WithButtonHeroSectionData[] = [
     },
     {
         id: '2',
-        type: 'HeroSection',
+        type: 'T1HeroSection',
         title: 'Places Hero Title',
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
@@ -35,7 +35,7 @@ const herosJson : WithButtonHeroSectionData[] = [
     },
     {
         id: '3',
-        type: 'HeroSection',
+        type: 'T1HeroSection',
         title: 'Best places',
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
@@ -45,7 +45,7 @@ const herosJson : WithButtonHeroSectionData[] = [
     },
     {
         id: '4',
-        type: 'HeroSection',
+        type: 'T1HeroSection',
         title: 'Countryside places',
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
@@ -55,14 +55,44 @@ const herosJson : WithButtonHeroSectionData[] = [
     },
     {
         id: '5',
-        type: 'HeroSection',
+        type: 'T1HeroSection',
         title: 'Cities places',
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
         buttonText: '',
         buttonHref: '',
-    }
+    },
+    {
+        id: '6',
+        type: 'T1HeroSection',
+        title: 'Journey in the countryside',
+        description: 'Description',
+        imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
+        imgAlt: 'Hero Image Alt',
+        buttonText: '',
+        buttonHref: '',
+    },
+    {
+        id: '7',
+        type: 'T1HeroSection',
+        title: 'Journey in the city',
+        description: 'Description',
+        imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
+        imgAlt: 'Hero Image Alt',
+        buttonText: '',
+        buttonHref: '',
+    },
+    {
+        id: '8',
+        type: 'T1HeroSection',
+        title: 'Journey at the lake',
+        description: 'Description',
+        imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
+        imgAlt: 'Hero Image Alt',
+        buttonText: '',
+        buttonHref: '',
+    },
 ]
 
-export default herosJson;
+export default t1HerosJson;

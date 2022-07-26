@@ -1,9 +1,9 @@
-import Hero from "../Sections/Hero";
+import T1Hero from "../Sections/T1Hero";
 import Article from "../Sections/Article";
 import Social from "../Sections/Social";
 
 import {
-    heroSectionData,
+    t1HeroSectionData,
     resourceBasicPreview01,
     resourceBasicPreview02,
     resourceBasicPreview03,
@@ -13,7 +13,7 @@ import {
 function MainPlaces() {
     return (
         <div id="MainPlaces">
-            <Hero content={heroSectionData} />
+            <T1Hero content={t1HeroSectionData} />
             <Article content={resourceBasicPreview01} />
             <Article content={resourceBasicPreview02} />
             <Article content={resourceBasicPreview03} />

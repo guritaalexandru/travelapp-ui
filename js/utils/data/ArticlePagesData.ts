@@ -2,41 +2,34 @@ import {
     DynamicPageData
 } from "../types/GlobalData";
 
-import herosJson from "./HeroJson";
-import resourceBasicPreviewsJson from "./ResourceBasicPreviewJson";
+import t1HerosJson from "./T1HeroJson";
 import socialJson from "./SocialJson";
 
 const allArticlesPagesData : DynamicPageData[] = [
     {
-        id: 'article1',
-        title: 'Article1',
+        id: 'journey-in-the-countryside',
+        title: 'Journey in the countryside',
         sections: [
-            herosJson[1],
-            resourceBasicPreviewsJson[0],
-            resourceBasicPreviewsJson[1],
-            resourceBasicPreviewsJson[2],
+            t1HerosJson[6],
+
             socialJson[1],
         ],
     },
     {
-        id: 'article2',
-        title: 'Article2',
+        id: 'journey-in-the-city',
+        title: 'Journey in the city',
         sections: [
-            herosJson[1],
-            resourceBasicPreviewsJson[0],
-            resourceBasicPreviewsJson[1],
-            resourceBasicPreviewsJson[2],
+            t1HerosJson[7],
+
             socialJson[1],
         ],
     },
     {
-        id: 'article3',
-        title: 'Article3',
+        id: 'journey-at-the-lake',
+        title: 'Journey at the lake',
         sections: [
-            herosJson[1],
-            resourceBasicPreviewsJson[0],
-            resourceBasicPreviewsJson[1],
-            resourceBasicPreviewsJson[2],
+            t1HerosJson[8],
+
             socialJson[1],
         ],
     },

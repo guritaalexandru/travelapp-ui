@@ -1,4 +1,5 @@
-import Hero from "../Sections/Hero";
+import T1Hero from "../Sections/T1Hero";
+import T2Hero from "../Sections/T2Hero";
 import Article from "../Sections/Article";
 import Social from "../Sections/Social";
 
@@ -12,8 +13,10 @@ const renderSection = (section: SectionData): JSX.Element => {
     switch (section.type) {
         case 'ResourceBasicPreview':
             return <Article content={section} />;
-        case 'HeroSection':
-            return <Hero content={section} />;
+        case 'T1HeroSection':
+            return <T1Hero content={section} />;
+        case 'T2HeroSection':
+            return <T2Hero content={section} />;
         case 'SocialSection':
             return <Social content={section} />;
         default:
