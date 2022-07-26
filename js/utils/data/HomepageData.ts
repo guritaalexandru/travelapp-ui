@@ -1,19 +1,15 @@
 import { 
     HighlightedSectionData, 
     WithButtonHeroSectionData, 
-    ArticleSectionData, 
+    ResourceBasicPreviewData, 
     SocialSectionData 
 } from "../types/GlobalData";
 
-const heroSectionData: WithButtonHeroSectionData = {
-    title: ' Homepage Hero Title',
-    description: 'Description',
-    buttonText: 'Hero Button Text',
-    buttonHref: '/hero-button-href',
-    imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
-    // imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/FJ7B3435.jpg',
-    imgAlt: 'Hero Image Alt',
-};
+import herosJson from "./HeroJson";
+import resourceBasicPreviewsJson from "./ResourceBasicPreviewJson";
+import socialJson from "./SocialJson";
+
+const heroSectionData: WithButtonHeroSectionData = herosJson[0];
 
 const highlightedSectionData: HighlightedSectionData = {
     highlightedCards: [
@@ -41,48 +37,19 @@ const highlightedSectionData: HighlightedSectionData = {
     ]
 };
 
-const articleSectionData01: ArticleSectionData = {
-    id: 1,
-    title: 'Article Title 1',
-    description: 'Article Description 1',
-    imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder1.png',
-    imgAlt: 'Article Image Alt 1',
-    buttonText: 'Article Button Text 1',
-    buttonHref: '/article-button-href',
-    position: 'RIGHT',
-};
+const resourceBasicPreview01: ResourceBasicPreviewData = resourceBasicPreviewsJson[6];
 
-const articleSectionData02: ArticleSectionData = {
-    id: 2,
-    title: 'Article Title 2',
-    description: 'Article Description 2',
-    imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder2.png',
-    imgAlt: 'Article Image Alt 2',
-    buttonText: 'Article Button Text 2',
-    buttonHref: '/article-button-href',
-    position: 'LEFT',
-};
+const resourceBasicPreview02: ResourceBasicPreviewData = resourceBasicPreviewsJson[7];
 
-const articleSectionData03: ArticleSectionData = {
-    id: 3,
-    title: 'Article Title 3',
-    description: 'Article Description 3',
-    imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder3.png',
-    imgAlt: 'Article Image Alt 3',
-    buttonText: 'Article Button Text 3',
-    buttonHref: '/article-button-href',
-    position: 'RIGHT',
-};
+const resourceBasicPreview03: ResourceBasicPreviewData = resourceBasicPreviewsJson[8];
 
-const socialSectionData: SocialSectionData = {
-    title: 'Social Title',
-};
+const socialSectionData: SocialSectionData = socialJson[0];
 
 export {
     heroSectionData,
     highlightedSectionData,
-    articleSectionData01,
-    articleSectionData02,
-    articleSectionData03,
+    resourceBasicPreview01,
+    resourceBasicPreview02,
+    resourceBasicPreview03,
     socialSectionData
 }

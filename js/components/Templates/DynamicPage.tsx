@@ -10,7 +10,7 @@ interface Props {
 
 const renderSection = (section: SectionData): JSX.Element => {
     switch (section.type) {
-        case 'ArticleSection':
+        case 'ResourceBasicPreview':
             return <Article content={section} />;
         case 'HeroSection':
             return <Hero content={section} />;

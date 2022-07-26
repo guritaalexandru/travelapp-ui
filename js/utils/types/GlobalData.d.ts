@@ -7,13 +7,12 @@ interface StaticPath {
 interface DynamicPageData {
     id: string;
     title: string;
-    sections: SectionData[];
+    sections: (HeroSectionData | ResourceBasicPreviewData | SocialSectionData)[];
 }
 
-type SectionData = HeroSectionData | ArticleSectionData | SocialSectionData;
-
-type SectionType = 'HeroSection' | 'ArticleSection' | 'SocialSection';
+type SectionType = 'HeroSection' | 'ResourceBasicPreview' | 'SocialSection';
 interface HeroSectionData {
+    id: string;
     type: 'HeroSection';
     title: string,
     description: string,
@@ -27,7 +26,7 @@ interface WithButtonHeroSectionData extends HeroSectionData {
 }
 
 interface HighlightedSectionData {
-    highlightedCards: HighlightedCard[];
+    highlightedCards: HighlightedCardData[];
 }
 
 interface HighlightedCardData {
@@ -38,8 +37,8 @@ interface HighlightedCardData {
     buttonHref: string;
 }
 
-interface ArticleSectionData {
-    type: 'ArticleSection';
+interface ResourceBasicPreviewData {
+    type: 'ResourceBasicPreview';
     id: number;
     title: string;
     description: string;
@@ -51,6 +50,7 @@ interface ArticleSectionData {
 }
 
 interface SocialSectionData {
+    id: string;
     type: 'SocialSection';
     title: string;
 }
@@ -58,11 +58,10 @@ interface SocialSectionData {
 export {
     StaticPath,
     DynamicPageData,
-    SectionData,
     HeroSectionData,
     WithButtonHeroSectionData, 
     HighlightedSectionData,
     HighlightedCardData,
-    ArticleSectionData,
+    ResourceBasicPreviewData,
     SocialSectionData
 }

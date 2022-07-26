@@ -6,9 +6,9 @@ import Social from "../Sections/Social";
 import {
     heroSectionData,
     highlightedSectionData,
-    articleSectionData01,
-    articleSectionData02,
-    articleSectionData03,
+    resourceBasicPreview01,
+    resourceBasicPreview02,
+    resourceBasicPreview03,
     socialSectionData
 } from "../../utils/data/HomepageData";
 
@@ -17,9 +17,9 @@ function Homepage() {
         <div id="Homepage">
             <Hero content={heroSectionData} />
             <Highlighted content={highlightedSectionData} />
-            <Article content={articleSectionData01} />
-            <Article content={articleSectionData02} />
-            <Article content={articleSectionData03} />
+            <Article content={resourceBasicPreview01} />
+            <Article content={resourceBasicPreview02} />
+            <Article content={resourceBasicPreview03} />
             <Social content={socialSectionData} />
         </div>
     );
