@@ -9,6 +9,7 @@ const allArticlesPagesData : DynamicPageData[] = [
     {
         id: 'journey-in-the-countryside',
         title: 'Journey in the countryside',
+        description: '',
         sections: [
             t1HerosJson[6],
 
@@ -18,6 +19,7 @@ const allArticlesPagesData : DynamicPageData[] = [
     {
         id: 'journey-in-the-city',
         title: 'Journey in the city',
+        description: '',
         sections: [
             t1HerosJson[7],
 
@@ -27,6 +29,7 @@ const allArticlesPagesData : DynamicPageData[] = [
     {
         id: 'journey-at-the-lake',
         title: 'Journey at the lake',
+        description: '',
         sections: [
             t1HerosJson[8],
 

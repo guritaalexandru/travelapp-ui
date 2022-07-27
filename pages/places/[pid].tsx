@@ -9,10 +9,11 @@ interface Props {
 export default function Places({ pageData }: Props) {
     const {
         title,
-        sections
+        sections,
+        description
     } = pageData;
     return (
-        <Layout title={title}>
+        <Layout title={title} description={description}>
             <DynamicPage sections={sections} />
         </Layout>
     )

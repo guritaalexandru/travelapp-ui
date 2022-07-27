@@ -9,6 +9,7 @@ type SectionData = T1HeroSectionData | T2HeroSectionData | ResourceBasicPreviewD
 interface DynamicPageData {
     id: string;
     title: string;
+    description: string;
     sections: SectionData[];
 }
 

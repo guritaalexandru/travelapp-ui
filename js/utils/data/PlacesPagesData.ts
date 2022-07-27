@@ -11,6 +11,7 @@ const allPlacesPagesData : DynamicPageData[] = [
     {
         id: 'best',
         title: 'Best places',
+        description: '',
         sections: [
             t1HerosJson[3],
             resourceBasicPreviewsJson[3],
@@ -22,6 +23,7 @@ const allPlacesPagesData : DynamicPageData[] = [
     {
         id: 'countryside',
         title: 'Countryside',
+        description: '',
         sections: [
             t1HerosJson[4],
             resourceBasicPreviewsJson[3],
@@ -33,6 +35,7 @@ const allPlacesPagesData : DynamicPageData[] = [
     {
         id: 'city',
         title: 'Cities',
+        description: '',
         sections: [
             t1HerosJson[5],
             resourceBasicPreviewsJson[3],
@@ -44,6 +47,7 @@ const allPlacesPagesData : DynamicPageData[] = [
     {
         id: 'brasov',
         title: 'Brasov',
+        description: '',
         sections: [
             t2HerosJson[0],
             socialJson[1]
@@ -52,6 +56,7 @@ const allPlacesPagesData : DynamicPageData[] = [
     {
         id: 'alba-iulia',
         title: 'Alba Iulia',
+        description: '',
         sections: [
             t2HerosJson[1],
 

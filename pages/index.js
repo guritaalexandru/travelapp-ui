@@ -1,10 +1,10 @@
 import Layout from '../js/components/Layout';
 import Homepage from '../js/components/Templates/Homepage.tsx';
-import { TITLE_PAGE_HOME } from '../js/utils/constants/titlesConstants.ts';
+import { TITLE_PAGE_HOME, DESCRIPTION_PAGE_HOME } from '../js/utils/constants/titlesConstants.ts';
 
 export default function Home() {
   return (
-    <Layout title={TITLE_PAGE_HOME}>
+    <Layout title={TITLE_PAGE_HOME} description={DESCRIPTION_PAGE_HOME}>
       <Homepage />
     </Layout>
   )
