@@ -2,6 +2,7 @@ import T1Hero from "../Sections/T1Hero";
 import T2Hero from "../Sections/T2Hero";
 import Article from "../Sections/Article";
 import Social from "../Sections/Social";
+import QuickDirections from "../Sections/QuickDirections";
 
 import { SectionData } from '../../utils/types/GlobalData';
 
@@ -19,6 +20,8 @@ const renderSection = (section: SectionData): JSX.Element => {
             return <T2Hero content={section} />;
         case 'SocialSection':
             return <Social content={section} />;
+        case 'QuickDirections':
+            return <QuickDirections content={section} />;
         default:
             return null;
     }

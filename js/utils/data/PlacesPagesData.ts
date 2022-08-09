@@ -6,6 +6,7 @@ import t1HerosJson from "./T1HeroJson";
 import t2HerosJson from "./T2HeroJson";
 import resourceBasicPreviewsJson from "./ResourceBasicPreviewJson";
 import socialJson from "./SocialJson";
+import quickDirectionsJson from "./quickDirectionsJson";
 
 const allPlacesPagesData : DynamicPageData[] = [
     {
@@ -50,6 +51,7 @@ const allPlacesPagesData : DynamicPageData[] = [
         description: '',
         sections: [
             t2HerosJson[0],
+            quickDirectionsJson[0],
             socialJson[1]
         ],
     },
@@ -59,7 +61,7 @@ const allPlacesPagesData : DynamicPageData[] = [
         description: '',
         sections: [
             t2HerosJson[1],
-
+            quickDirectionsJson[1],
             socialJson[1]
         ],
     },

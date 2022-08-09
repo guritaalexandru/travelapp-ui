@@ -9,7 +9,7 @@ interface SimpleButtonData {
     href: string;
 }
 
-type SectionData = T1HeroSectionData | T2HeroSectionData | ResourceBasicPreviewData | SocialSectionData;
+type SectionData = T1HeroSectionData | T2HeroSectionData | ResourceBasicPreviewData | SocialSectionData | QuickDirectionsData;
 
 interface DynamicPageData {
     id: string;
@@ -18,7 +18,6 @@ interface DynamicPageData {
     sections: SectionData[];
 }
 
-type SectionType = 'T1HeroSection' | 'T2HeroSection' | 'ResourceBasicPreview' | 'SocialSection';
 interface T1HeroSectionData {
     id: string;
     type: 'T1HeroSection';
@@ -74,11 +73,12 @@ type MapsReferenceData = {
 
 type QuickDirectionsData = {
     id: string;
+    type: 'QuickDirections';
     upperText: string;
     instructionCards: {
         icon: 'PLANE' | 'TRAIN' | 'BUS';
         destination: string;
-    }
+    }[];
     buttonCTA: SimpleButtonData;
 }
 
@@ -94,5 +94,6 @@ export {
     HighlightedCardData,
     ResourceBasicPreviewData,
     SocialSectionData,
+    QuickDirectionsData,
     MapsReferenceData
 }
