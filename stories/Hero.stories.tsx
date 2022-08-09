@@ -1,14 +1,14 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 
-import Hero from '../js/components/Sections/Hero';
+import T1Hero from '../js/components/Sections/T1Hero';
 
 export default {
-  title: 'Sections/Hero',
-  component: Hero,
-} as ComponentMeta<typeof Hero>;
+  title: 'Sections/T1Hero',
+  component: T1Hero,
+} as ComponentMeta<typeof T1Hero>;
 
-const Template: ComponentStory<typeof Hero> = (args) => <Hero {...args} />;
+const Template: ComponentStory<typeof T1Hero> = (args) => <T1Hero {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {

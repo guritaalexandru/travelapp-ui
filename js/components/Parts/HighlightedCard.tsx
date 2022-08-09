@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { HighlightedCardData } from '../../utils/types/HomepageData'
+import { HighlightedCardData } from '../../utils/types/GlobalData'
 import ButtonCTA from "./ButtonCTA";
 
 interface Props {
@@ -20,7 +20,7 @@ function HighlightedCard({ cardData }: Props) {
                 <h2 className="text-2xl text-white mb-6 font-bold text-center">
                     {cardData.title}
                 </h2>
-                <ButtonCTA href={cardData.buttonHref} text={cardData.buttonText} type="primary" />
+                <ButtonCTA buttonData={cardData.buttonCTA} type="primary" />
             </div>
         </div>
     );

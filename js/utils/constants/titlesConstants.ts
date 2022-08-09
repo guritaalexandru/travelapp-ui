@@ -1,9 +1,21 @@
 const TITLE_PAGE_HOME = 'Home';
+const DESCRIPTION_PAGE_HOME = 'Home page';
 const TITLE_PAGE_ABOUT = 'About';
+const DESCRIPTION_PAGE_ABOUT = 'About page';
 const TITLE_PAGE_PLACES = 'Places';
+const DESCRIPTION_PAGE_PLACES = 'Places page';
+const TITLE_PAGE_ARTICLES = 'Articles';
+const DESCRIPTION_PAGE_ARTICLES = 'Articles page';
+const TITLE_404 = 'Not found'
 
 export {
     TITLE_PAGE_HOME,
+    DESCRIPTION_PAGE_HOME,
     TITLE_PAGE_ABOUT,
+    DESCRIPTION_PAGE_ABOUT,
     TITLE_PAGE_PLACES,
+    DESCRIPTION_PAGE_PLACES,
+    TITLE_PAGE_ARTICLES,
+    DESCRIPTION_PAGE_ARTICLES,
+    TITLE_404
 }

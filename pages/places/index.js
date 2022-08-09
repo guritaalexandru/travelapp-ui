@@ -1,11 +1,11 @@
 import Layout from '../../js/components/Layout';
-import Places from '../../js/components/Templates/Places.tsx';
-import { TITLE_PAGE_PLACES } from '../../js/utils/constants/titlesConstants.ts';
+import MainPlaces from '../../js/components/Templates/MainPlaces.tsx';
+import { TITLE_PAGE_PLACES, DESCRIPTION_PAGE_PLACES } from '../../js/utils/constants/titlesConstants.ts';
 
-export default function Locations() {
+export default function PlacesCollection() {
   return (
-    <Layout title={TITLE_PAGE_PLACES}>
-      <Places />
+    <Layout title={TITLE_PAGE_PLACES} description={DESCRIPTION_PAGE_PLACES}>
+      <MainPlaces />
     </Layout>
   )
 }

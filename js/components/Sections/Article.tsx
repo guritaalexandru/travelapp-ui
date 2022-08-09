@@ -1,14 +1,14 @@
 import ButtonCTA from "../Parts/ButtonCTA";
-import { ArticleSectionData } from "../../utils/types/HomepageData";
+import { ResourceBasicPreviewData } from "../../utils/types/GlobalData";
 import Image from "next/image";
 
 interface Props {
-    content: ArticleSectionData;
+    content: ResourceBasicPreviewData;
 }
 
 function Article({ content }: Props) {
     return (
-        <section id={`ArticleSection-${content.id}`}>
+        <section id={`ResourceBasicPreview-${content.id}`}>
             <div className="full-container">
                 <div className={`flex h-80 ${content.position === 'LEFT' ? 'flex-row-reverse' : ''}`}>
                     <div className="w-1/2 flex flex-col justify-between">
@@ -20,7 +20,7 @@ function Article({ content }: Props) {
                                 {content.description}
                             </p>
                         </div>
-                        <ButtonCTA href={content.buttonHref} text={content.buttonText} type="primary" />
+                        <ButtonCTA buttonData={content.buttonCTA} type="primary" />
                     </div>
                     <div className="w-1/2 relative">
                         <Image src={content.imgHref} alt={content.imgAlt}

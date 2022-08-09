@@ -1,25 +1,25 @@
-import Hero from "../Sections/Hero";
+import T1Hero from "../Sections/T1Hero";
 import Highlighted from "../Sections/Highlighted";
 import Article from "../Sections/Article";
 import Social from "../Sections/Social";
 
 import {
-    heroSectionData,
+    t1HeroSectionData,
     highlightedSectionData,
-    articleSectionData01,
-    articleSectionData02,
-    articleSectionData03,
+    resourceBasicPreview01,
+    resourceBasicPreview02,
+    resourceBasicPreview03,
     socialSectionData
 } from "../../utils/data/HomepageData";
 
 function Homepage() {
     return (
         <div id="Homepage">
-            <Hero content={heroSectionData} />
+            <T1Hero content={t1HeroSectionData} />
             <Highlighted content={highlightedSectionData} />
-            <Article content={articleSectionData01} />
-            <Article content={articleSectionData02} />
-            <Article content={articleSectionData03} />
+            <Article content={resourceBasicPreview01} />
+            <Article content={resourceBasicPreview02} />
+            <Article content={resourceBasicPreview03} />
             <Social content={socialSectionData} />
         </div>
     );
