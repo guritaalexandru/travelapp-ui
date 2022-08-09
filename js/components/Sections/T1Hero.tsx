@@ -7,7 +7,7 @@ interface Props {
 }
 
 function T1Hero({ content }: Props) {
-    const hasButton = 'buttonText' in content;
+    const hasButton = 'buttonCTA' in content;
 
     return (
         <section id="T1HeroSection">
@@ -25,7 +25,7 @@ function T1Hero({ content }: Props) {
                     <p className="text-xl text-white mb-6">
                         {content.description}
                     </p>
-                    {hasButton && <ButtonCTA href={content.buttonHref} text={content.buttonText} type="primary" />}
+                    {hasButton && <ButtonCTA buttonData={content.buttonCTA} type="primary" />}
                 </div>
             </div>
         </section>

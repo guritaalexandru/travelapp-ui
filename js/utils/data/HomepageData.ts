@@ -17,22 +17,28 @@ const highlightedSectionData: HighlightedSectionData = {
             title: 'Highlighted Card Title',
             imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder1.png',
             imgAlt: 'Highlighted Card Image Alt',
-            buttonText: 'Highlighted Card Button Text',
-            buttonHref: '/highlighted-card-button-href',
+            buttonCTA: {
+                text: 'Highlighted Card Button Text',
+                href: '/highlighted-card-button-href',
+            },
         },
         {
             title: 'Highlighted Card Title 2',
             imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder2.png',
             imgAlt: 'Highlighted Card Image Alt',
-            buttonText: 'Highlighted Card Button Text 2',
-            buttonHref: '/highlighted-card-button-href',
+            buttonCTA: {
+                text: 'Highlighted Card Button Text 2',
+                href: '/highlighted-card-button-href',
+            },
         },
         {
             title: 'Highlighted Card Title 3',
             imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder3.png',
             imgAlt: 'Highlighted Card Image Alt',
-            buttonText: 'Highlighted Card Button Text 3',
-            buttonHref: '/highlighted-card-button-href',
+            buttonCTA: {
+                text: 'Highlighted Card Button Text 3',
+                href: '/highlighted-card-button-href',
+            },
         }
     ]
 };

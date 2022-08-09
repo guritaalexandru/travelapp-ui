@@ -1,11 +1,17 @@
 import Link from "next/link";
+import { SimpleButtonData } from '../../utils/types/GlobalData';
 
-function ButtonCTA({ href, text, type }) {
+interface Props {
+    buttonData: SimpleButtonData;
+    type: string;
+}
+
+function ButtonCTA({ buttonData, type }: Props) {
     return (
         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full">
-            <Link href={href}>
+            <Link href={buttonData.href}>
                 <a>
-                    {text}
+                    {buttonData.text}
                 </a>
             </Link>
         </button>

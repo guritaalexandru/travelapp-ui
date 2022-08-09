@@ -4,6 +4,11 @@ interface StaticPath {
     }
 };
 
+interface SimpleButtonData {
+    text: string;
+    href: string;
+}
+
 type SectionData = T1HeroSectionData | T2HeroSectionData | ResourceBasicPreviewData | SocialSectionData;
 
 interface DynamicPageData {
@@ -29,8 +34,7 @@ interface T2HeroSectionData extends T1HeroSectionData {
 }
 
 interface WithButtonT1HeroSectionData extends T1HeroSectionData {
-    buttonText: string,
-    buttonHref: string,
+    buttonCTA: SimpleButtonData;
 }
 
 interface HighlightedSectionData {
@@ -41,8 +45,7 @@ interface HighlightedCardData {
     title: string;
     imgHref: string;
     imgAlt: string;
-    buttonText: string;
-    buttonHref: string;
+    buttonCTA: SimpleButtonData;
 }
 
 interface ResourceBasicPreviewData {
@@ -52,8 +55,7 @@ interface ResourceBasicPreviewData {
     description: string;
     imgHref: string;
     imgAlt: string;
-    buttonText: string;
-    buttonHref: string;
+    buttonCTA: SimpleButtonData;
     position: 'LEFT' | 'RIGHT';
 }
 
@@ -70,8 +72,19 @@ type MapsReferenceData = {
     appleMapsHref: string;
 }
 
+type QuickDirectionsData = {
+    id: string;
+    upperText: string;
+    instructionCards: {
+        icon: 'PLANE' | 'TRAIN' | 'BUS';
+        destination: string;
+    }
+    buttonCTA: SimpleButtonData;
+}
+
 export {
     StaticPath,
+    SimpleButtonData,
     DynamicPageData,
     SectionData,
     T1HeroSectionData,

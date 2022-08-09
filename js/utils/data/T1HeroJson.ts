@@ -10,8 +10,10 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
-        buttonText: 'Hero Button Text',
-        buttonHref: '/hero-button-href',
+        buttonCTA: {
+            text: 'Hero Button Text',
+            href: '/hero-button-href',
+        },
     },
     {
         id: '1',
@@ -20,8 +22,10 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
-        buttonText: '',
-        buttonHref: '',
+        buttonCTA: {
+            text: '',
+            href: '',
+        },
     },
     {
         id: '2',
@@ -30,8 +34,10 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
-        buttonText: '',
-        buttonHref: '',
+        buttonCTA: {
+            text: '',
+            href: '',
+        },
     },
     {
         id: '3',
@@ -40,8 +46,10 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
-        buttonText: '',
-        buttonHref: '',
+        buttonCTA: {
+            text: '',
+            href: '',
+        },
     },
     {
         id: '4',
@@ -50,8 +58,10 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
-        buttonText: '',
-        buttonHref: '',
+        buttonCTA: {
+            text: '',
+            href: '',
+        },
     },
     {
         id: '5',
@@ -60,8 +70,10 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
-        buttonText: '',
-        buttonHref: '',
+        buttonCTA: {
+            text: '',
+            href: '',
+        },
     },
     {
         id: '6',
@@ -70,8 +82,10 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
-        buttonText: '',
-        buttonHref: '',
+        buttonCTA: {
+            text: '',
+            href: '',
+        },
     },
     {
         id: '7',
@@ -80,8 +94,10 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
-        buttonText: '',
-        buttonHref: '',
+        buttonCTA: {
+            text: '',
+            href: '',
+        },
     },
     {
         id: '8',
@@ -90,8 +106,10 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
-        buttonText: '',
-        buttonHref: '',
+        buttonCTA: {
+            text: '',
+            href: '',
+        },
     },
 ]
 

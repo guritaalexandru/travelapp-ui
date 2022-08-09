@@ -20,7 +20,7 @@ function Article({ content }: Props) {
                                 {content.description}
                             </p>
                         </div>
-                        <ButtonCTA href={content.buttonHref} text={content.buttonText} type="primary" />
+                        <ButtonCTA buttonData={content.buttonCTA} type="primary" />
                     </div>
                     <div className="w-1/2 relative">
                         <Image src={content.imgHref} alt={content.imgAlt}
