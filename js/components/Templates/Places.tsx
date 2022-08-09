@@ -12,9 +12,9 @@ import {
     socialSectionData
 } from "../../utils/data/HomepageData";
 
-function Homepage() {
+function Places() {
     return (
-        <div id="Homepage">
+        <div id="Places">
             <Hero content={heroSectionData} />
             <Highlighted content={highlightedSectionData} />
             <Article content={articleSectionData01} />
@@ -25,4 +25,4 @@ function Homepage() {
     );
 }
 
-export default Homepage;
+export default Places;
