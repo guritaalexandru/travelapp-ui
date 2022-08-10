@@ -1,3 +1,5 @@
+import ButtonCTA from "../Parts/ButtonCTA";
+
 import { QuickDirectionsData } from "../../utils/types/GlobalData";
 import Image from "next/image";
 import Airplane from "../SVG/Airplane.svg";
@@ -50,6 +52,7 @@ function QuickDirections({ content }: Props) {
                         )
                     }
                 </div>
+                <ButtonCTA buttonData={content.buttonCTA} type="primary" />
             </div>
         </section>
     );

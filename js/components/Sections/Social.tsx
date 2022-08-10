@@ -1,7 +1,11 @@
 import { SocialSectionData } from "../../utils/types/GlobalData";
 import { INSTAGRAM_LINK, FACEBOOK_LINK } from "../../utils/constants/generalConstants"
-import FacebookSVG from '../SVG/FacebookSVG';
-import InstagramSVG from '../SVG/InstagramSVG';
+import Image from "next/image";
+
+import Facebook from '../SVG/Facebook.svg';
+import Instagram from '../SVG/Instagram.svg';
+
+const ICON_SIZE = 50;
 
 interface Props {
     content: SocialSectionData;
@@ -16,10 +20,14 @@ function Social({ content }: Props) {
                 </h2>
                 <div className="flex justify-center">
                     <a href={FACEBOOK_LINK}>
-                        <FacebookSVG />
+                        <Image src={Facebook} alt="Facebook Icon"
+                            height={ICON_SIZE} width={ICON_SIZE}
+                        />
                     </a>
                     <a href={INSTAGRAM_LINK}>
-                        <InstagramSVG />
+                        <Image src={Instagram} alt="Instagram Icon"
+                            height={ICON_SIZE} width={ICON_SIZE}
+                        />
                     </a>
                 </div>
             </div>

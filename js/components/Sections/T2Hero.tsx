@@ -6,7 +6,7 @@ interface Props {
     content: T2HeroSectionData;
 }
 
-function T1Hero({ content }: Props) {
+function T2Hero({ content }: Props) {
     return (
         <section id="T2HeroSection">
             <div className="full-container flex">
@@ -32,4 +32,4 @@ function T1Hero({ content }: Props) {
     );
 }
 
-export default T1Hero;
+export default T2Hero;
