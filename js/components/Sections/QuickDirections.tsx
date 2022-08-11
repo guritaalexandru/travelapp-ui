@@ -2,9 +2,9 @@ import ButtonCTA from "../Parts/ButtonCTA";
 
 import { QuickDirectionsData } from "../../utils/types/GlobalData";
 import Image from "next/image";
-import Airplane from "../SVG/Airplane.svg";
-import Train from "../SVG/Train.svg";
-import Bus from "../SVG/Bus.svg";
+import Airplane from "../../../public/SVG/Airplane.svg";
+import Train from "../../../public/SVG/Train.svg";
+import Bus from "../../../public/SVG/Bus.svg";
 
 const renderCardIcon = (type: string) => {
     switch (type) {

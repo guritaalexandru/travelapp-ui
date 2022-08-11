@@ -2,8 +2,8 @@ import { SocialSectionData } from "../../utils/types/GlobalData";
 import { INSTAGRAM_LINK, FACEBOOK_LINK } from "../../utils/constants/generalConstants"
 import Image from "next/image";
 
-import Facebook from '../SVG/Facebook.svg';
-import Instagram from '../SVG/Instagram.svg';
+import Facebook from '../../../public/SVG/Facebook.svg';
+import Instagram from '../../../public/SVG/Instagram.svg';
 
 const ICON_SIZE = 50;
 

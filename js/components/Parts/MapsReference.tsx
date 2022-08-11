@@ -2,8 +2,8 @@ import { MAPS_REFERENCE_TILE } from '../../utils/constants/generalConstants'
 import { MapsReferenceData } from '../../utils/types/GlobalData'
 import Image from "next/image";
 
-import AppleMaps from '../SVG/AppleMaps.svg'
-import GoogleMaps from '../SVG/GoogleMaps.svg'
+import AppleMaps from '../../../public/SVG/AppleMaps.svg'
+import GoogleMaps from '../../../public/SVG/GoogleMaps.svg'
 
 const ICON_SIZE = 50;
 
