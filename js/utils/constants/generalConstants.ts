@@ -1,8 +1,13 @@
+const WEB_URL = process.env.ENVIRONMENT === 'development' ? 'http://localhost:3000' : '';
+const API_URL = process.env.ENVIRONMENT === 'development' ? 'http://localhost:1337' : '';
+
 const INSTAGRAM_LINK = 'https://www.instagram.com/';
 const FACEBOOK_LINK = 'https://www.facebook.com/';
-const MAPS_REFERENCE_TILE = 'Find it on your map!'
+const MAPS_REFERENCE_TILE = 'Find it on your map!';
 
 export {
+    WEB_URL,
+    API_URL,
     INSTAGRAM_LINK,
     FACEBOOK_LINK,
     MAPS_REFERENCE_TILE

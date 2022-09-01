@@ -11,17 +11,22 @@ interface Props {
 }
 
 const renderSection = (section: SectionData): JSX.Element => {
-    switch (section.type) {
-        case 'ResourceBasicPreview':
+    switch (section.__component) {
+        case 'dynamic-s.rbp-ref':
             return <Article content={section} />;
-        case 'T1HeroSection':
+
+        case 'dynamic-s.t1-hero-ref':
             return <T1Hero content={section} />;
-        case 'T2HeroSection':
+
+        case 'dynamic-s.t2-hero-ref':
             return <T2Hero content={section} />;
-        case 'SocialSection':
+
+        case 'dynamic-s.social-ref':
             return <Social content={section} />;
-        case 'QuickDirections':
-            return <QuickDirections content={section} />;
+
+        // case 'QuickDirections':
+        //     return <QuickDirections content={section} />;
+
         default:
             return null;
     }

@@ -8,24 +8,25 @@ interface Props {
 
 function T1Hero({ content }: Props) {
     const hasButton = 'buttonCTA' in content;
+    const sectionContent = content.t1hero;
 
     return (
         <section id="T1HeroSection">
             <div className="relative">
                 <div className="background-image">
-                    <Image src={content.imgHref} alt={content.imgAlt}
+                    <Image src={sectionContent.backgroundImage.url} alt={sectionContent.backgroundImage.alternativeText}
                         layout="fill"
                         objectFit="cover"
                     />
                 </div>
                 <div className="full-container flex flex-col justify-end h-120 2xl:h-96">
                     <h1 className="text-5xl text-white mb-6 font-bold">
-                        {content.title}
+                        {sectionContent.title}
                     </h1>
                     <p className="text-xl text-white mb-6">
-                        {content.description}
+                        {sectionContent.description}
                     </p>
-                    {hasButton && <ButtonCTA buttonData={content.buttonCTA} type="primary" />}
+                    {hasButton && <ButtonCTA buttonData={sectionContent.buttonCTA} type="primary" />}
                 </div>
             </div>
         </section>

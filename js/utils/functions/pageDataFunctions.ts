@@ -1,35 +1,44 @@
 import { StaticPath, DynamicPageData } from '../types/GlobalData';
+import { PlacesPagesPathsResponse } from '../types/FetchTypes';
 
-import {allPlacesPagesData} from '../data/PlacesPagesData';
+import { API_URL } from '../constants/generalConstants';
+
 import {allArticlesPagesData} from '../data/ArticlePagesData';
 
-const getAllPlacesIds = () : StaticPath[] => {
-    return allPlacesPagesData.map(({id}) => ({
+const getAllPlacesPaths = async () : Promise<StaticPath[]> => {
+    const pathData = await fetch(`${API_URL}/api/places-pages/paths`);
+    const pathDataJson : PlacesPagesPathsResponse = await pathData.json();
+    const { placesPaths } = pathDataJson;
+
+    return placesPaths.map( path => ({
         params: {
-            pid: id,
+            pid: path,
         }
     }));
 }
 
-const getPlaceDataById = (id: string) : DynamicPageData | undefined => {    
-    return allPlacesPagesData.find(({id: pageId}) => pageId === id);
+const getPlaceDataByPath = async (path: string) : Promise<DynamicPageData> => {
+    const pathData = await fetch(`${API_URL}/api/places-pages/${path}`);
+    const pathDataJson : DynamicPageData = await pathData.json();
+    
+    return pathDataJson;
 }
 
 const getAllArticlesIds = () : StaticPath[] => {
-    return allArticlesPagesData.map(({id}) => ({
+    return allArticlesPagesData.map(({href}) => ({
         params: {
-            pid: id,
+            pid: href,
         }
     }));
 }
 
-const getArticleDataById = (id: string) : DynamicPageData | undefined => {
-    return allArticlesPagesData.find(({id: pageId}) => pageId === id);
+const getArticleDataById = (href: string) : DynamicPageData | undefined => {
+    return allArticlesPagesData.find(({href: pageId}) => pageId === href);
 }
 
 export {
-    getAllPlacesIds,
-    getPlaceDataById,
+    getAllPlacesPaths,
+    getPlaceDataByPath,
     getAllArticlesIds,
     getArticleDataById
 };

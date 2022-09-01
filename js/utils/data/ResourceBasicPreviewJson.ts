@@ -64,7 +64,7 @@ const resourceBasicPreviewsJson : ResourceBasicPreviewData[] = [
         imgAlt: 'Article Image Alt 2',
         buttonCTA: {
             text: 'Article Button Text 2',
-            href: '/articles/journey-in-the-cityy',
+            href: '/articles/journey-in-the-city',
         },
         position: 'LEFT',
     },
@@ -78,45 +78,6 @@ const resourceBasicPreviewsJson : ResourceBasicPreviewData[] = [
         buttonCTA: {
             text: 'Article Button Text 3',
             href: '/articles/journey-at-the-lake',
-        },
-        position: 'RIGHT',
-    },
-    {
-        id: 6,
-        type: 'ResourceBasicPreview',
-        title: 'Best places to see',
-        description: 'Article Description 1',
-        imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder1.png',
-        imgAlt: 'Article Image Alt 1',
-        buttonCTA: {
-            text: 'Article Button Text 1',
-            href: '/places/best',
-        },
-        position: 'RIGHT',
-    },
-    {
-        id: 7,
-        type: 'ResourceBasicPreview',
-        title: 'Explore the city',
-        description: 'Article Description 2',
-        imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder2.png',
-        imgAlt: 'Article Image Alt 2',
-        buttonCTA: {
-            text: 'Article Button Text 2',
-            href: '/places/city',
-        },
-        position: 'LEFT',
-    },
-    {
-        id: 8,
-        type: 'ResourceBasicPreview',
-        title: 'Adventure in the countryside',
-        description: 'Article Description 3',
-        imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HighlitedCardPlaceholder3.png',
-        imgAlt: 'Article Image Alt 3',
-        buttonCTA: {
-            text: 'Article Button Text 3',
-            href: '/places/countryside',
         },
         position: 'RIGHT',
     }

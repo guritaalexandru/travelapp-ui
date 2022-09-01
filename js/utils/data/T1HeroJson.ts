@@ -6,7 +6,7 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
     {
         id: '0',
         type: 'T1HeroSection',
-        title: ' Homepage Hero Title',
+        title: 'Homepage Hero Title',
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',
@@ -18,7 +18,7 @@ const t1HerosJson : WithButtonT1HeroSectionData[] = [
     {
         id: '1',
         type: 'T1HeroSection',
-        title: ' Articles Hero Title',
+        title: 'Articles Hero Title',
         description: 'Description',
         imgHref: 'https://traveluibucket.s3.eu-central-1.amazonaws.com/HeroPlaceholder.png',
         imgAlt: 'Hero Image Alt',

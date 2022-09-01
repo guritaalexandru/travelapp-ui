@@ -2,6 +2,8 @@ import {
     SocialSectionData, 
 } from "../types/GlobalData";
 
+//I can add the type automatically when retrieving data to avoid replication
+
 const socialJson : SocialSectionData[] = [
     {
         id: '0',

@@ -9,27 +9,59 @@ interface SimpleButtonData {
     href: string;
 }
 
-type SectionData = T1HeroSectionData | T2HeroSectionData | ResourceBasicPreviewData | SocialSectionData | QuickDirectionsData;
+interface ImageData {
+    alternativeText: string,
+    url: string,
+    formats: {
+        small: {
+            url: string,
+        } | undefined,
+        medium: {
+            url: string,
+        } | undefined,
+        large: {
+            url: string,
+        } | undefined,
+        thumbnail: {
+            url: string,
+        },
+    },
+}
+
+type SectionData = T1HeroSectionData | T2HeroSectionData | ResourceBasicPreviewData | SocialSectionData;
+
+interface DynamicSection {
+    id: number,
+    order: number,
+}
 
 interface DynamicPageData {
     id: string;
     title: string;
     description: string;
+    href: string;
     sections: SectionData[];
 }
 
-interface T1HeroSectionData {
-    id: string;
-    type: 'T1HeroSection';
-    title: string,
-    description: string,
-    imgHref: string,
-    imgAlt: string,
+interface T1HeroSectionData extends DynamicSection {
+    __component: 'dynamic-s.t1-hero-ref',
+    t1hero: {
+        id: number,
+        title: string,
+        description: string,
+        backgroundImage: ImageData,
+    }
 }
 
-interface T2HeroSectionData extends T1HeroSectionData {
-    type: 'T2HeroSection';
-    mapsReference: MapsReferenceData;
+interface T2HeroSectionData extends DynamicSection {
+    __component: 'dynamic-s.t2-hero-ref',
+    t2hero: {
+        id: number,
+        title: string,
+        description: string,
+        image: ImageData,
+        mapsReference: MapsReferenceData
+    }
 }
 
 interface WithButtonT1HeroSectionData extends T1HeroSectionData {
@@ -47,20 +79,21 @@ interface HighlightedCardData {
     buttonCTA: SimpleButtonData;
 }
 
-interface ResourceBasicPreviewData {
-    type: 'ResourceBasicPreview';
-    id: number;
-    title: string;
-    description: string;
-    imgHref: string;
-    imgAlt: string;
-    buttonCTA: SimpleButtonData;
-    position: 'LEFT' | 'RIGHT';
+interface ResourceBasicPreviewData extends DynamicSection {
+    __component: 'dynamic-s.rbp-ref',
+    rbp: {
+        id: number;
+        title: string;
+        description: string;
+        image: ImageData;
+        buttonCTA: SimpleButtonData;
+        position: 'LEFT' | 'RIGHT';
+    }
 }
 
-interface SocialSectionData {
+interface SocialSectionData extends DynamicSection {
     id: string;
-    type: 'SocialSection';
+    __component: 'dynamic-s.social-ref';
     title: string;
 }
 
@@ -71,19 +104,20 @@ type MapsReferenceData = {
     appleMapsHref: string;
 }
 
-type QuickDirectionsData = {
-    id: string;
-    type: 'QuickDirections';
-    upperText: string;
-    instructionCards: {
-        icon: 'PLANE' | 'TRAIN' | 'BUS';
-        destination: string;
-    }[];
-    buttonCTA: SimpleButtonData;
-}
+// type QuickDirectionsData = {
+//     id: string;
+//     __component: 'dynamic-s.t2-hero-ref',
+//     upperText: string;
+//     instructionCards: {
+//         icon: 'PLANE' | 'TRAIN' | 'BUS';
+//         destination: string;
+//     }[];
+//     buttonCTA: SimpleButtonData;
+// }
 
 export {
     StaticPath,
+    ImageData,
     SimpleButtonData,
     DynamicPageData,
     SectionData,

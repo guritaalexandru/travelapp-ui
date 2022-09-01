@@ -7,7 +7,7 @@ import socialJson from "./SocialJson";
 
 const allArticlesPagesData : DynamicPageData[] = [
     {
-        id: 'journey-in-the-countryside',
+        href: 'journey-in-the-countryside',
         title: 'Journey in the countryside',
         description: '',
         sections: [
@@ -17,7 +17,7 @@ const allArticlesPagesData : DynamicPageData[] = [
         ],
     },
     {
-        id: 'journey-in-the-city',
+        href: 'journey-in-the-city',
         title: 'Journey in the city',
         description: '',
         sections: [
@@ -27,7 +27,7 @@ const allArticlesPagesData : DynamicPageData[] = [
         ],
     },
     {
-        id: 'journey-at-the-lake',
+        href: 'journey-at-the-lake',
         title: 'Journey at the lake',
         description: '',
         sections: [

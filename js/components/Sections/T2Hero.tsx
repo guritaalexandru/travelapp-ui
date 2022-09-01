@@ -7,21 +7,23 @@ interface Props {
 }
 
 function T2Hero({ content }: Props) {
+    const sectionContent = content.t2hero;
+
     return (
         <section id="T2HeroSection">
             <div className="full-container flex">
                 <div className="w-1/2 flex flex-col justify-end h-120 2xl:h-96">
                     <h1 className="text-5xl text-black mb-6 font-bold">
-                        {content.title}
+                        {sectionContent.title}
                     </h1>
                     <p className="text-xl text-black mb-6">
-                        {content.description}
+                        {sectionContent.description}
                     </p>
-                    <MapsReference data={content.mapsReference} />
+                    <MapsReference data={sectionContent.mapsReference} />
                 </div>
                 <div className="relative w-1/2">
                     <div className="background-image">
-                        <Image src={content.imgHref} alt={content.imgAlt}
+                        <Image src={sectionContent.image.url} alt={sectionContent.image.alternativeText}
                             layout="fill"
                             objectFit="cover"
                         />

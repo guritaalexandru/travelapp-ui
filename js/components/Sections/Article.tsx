@@ -7,23 +7,25 @@ interface Props {
 }
 
 function Article({ content }: Props) {
+    const sectionContent = content.rbp;
+
     return (
-        <section id={`ResourceBasicPreview-${content.id}`}>
+        <section id={`ResourceBasicPreview-${sectionContent.id}`}>
             <div className="full-container">
-                <div className={`flex h-80 ${content.position === 'LEFT' ? 'flex-row-reverse' : ''}`}>
+                <div className={`flex h-80 ${sectionContent.position === 'LEFT' ? 'flex-row-reverse' : ''}`}>
                     <div className="w-1/2 flex flex-col justify-between">
                         <div className="p-10">
                             <h2 className="text-2xl mb-6 font-bold text-center">
-                                {content.title}
+                                {sectionContent.title}
                             </h2>
                             <p className="text-xl mb-6">
-                                {content.description}
+                                {sectionContent.description}
                             </p>
                         </div>
-                        <ButtonCTA buttonData={content.buttonCTA} type="primary" />
+                        <ButtonCTA buttonData={sectionContent.buttonCTA} type="primary" />
                     </div>
                     <div className="w-1/2 relative">
-                        <Image src={content.imgHref} alt={content.imgAlt}
+                        <Image src={sectionContent.image.url} alt={sectionContent.image.alternativeText}
                             layout="fill"
                             objectFit="cover"
                         />

@@ -43,11 +43,11 @@ const highlightedSectionData: HighlightedSectionData = {
     ]
 };
 
-const resourceBasicPreview01: ResourceBasicPreviewData = resourceBasicPreviewsJson[6];
+const resourceBasicPreview01: ResourceBasicPreviewData = resourceBasicPreviewsJson[0];
 
-const resourceBasicPreview02: ResourceBasicPreviewData = resourceBasicPreviewsJson[7];
+const resourceBasicPreview02: ResourceBasicPreviewData = resourceBasicPreviewsJson[1];
 
-const resourceBasicPreview03: ResourceBasicPreviewData = resourceBasicPreviewsJson[8];
+const resourceBasicPreview03: ResourceBasicPreviewData = resourceBasicPreviewsJson[2];
 
 const socialSectionData: SocialSectionData = socialJson[0];
 

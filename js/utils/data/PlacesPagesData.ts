@@ -6,11 +6,11 @@ import t1HerosJson from "./T1HeroJson";
 import t2HerosJson from "./T2HeroJson";
 import resourceBasicPreviewsJson from "./ResourceBasicPreviewJson";
 import socialJson from "./SocialJson";
-import quickDirectionsJson from "./quickDirectionsJson";
+import quickDirectionsJson from "./QuickDirectionsJson"
 
 const allPlacesPagesData : DynamicPageData[] = [
     {
-        id: 'best',
+        href: 'best',
         title: 'Best places',
         description: '',
         sections: [
@@ -22,7 +22,7 @@ const allPlacesPagesData : DynamicPageData[] = [
         ],
     },
     {
-        id: 'countryside',
+        href: 'countryside',
         title: 'Countryside',
         description: '',
         sections: [
@@ -34,7 +34,7 @@ const allPlacesPagesData : DynamicPageData[] = [
         ],
     },
     {
-        id: 'city',
+        href: 'city',
         title: 'Cities',
         description: '',
         sections: [
@@ -46,7 +46,7 @@ const allPlacesPagesData : DynamicPageData[] = [
         ],
     },
     {
-        id: 'brasov',
+        href: 'brasov',
         title: 'Brasov',
         description: '',
         sections: [
@@ -56,7 +56,7 @@ const allPlacesPagesData : DynamicPageData[] = [
         ],
     },
     {
-        id: 'alba-iulia',
+        href: 'alba-iulia',
         title: 'Alba Iulia',
         description: '',
         sections: [
