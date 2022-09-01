@@ -1,15 +1,15 @@
 import { 
     HighlightedSectionData, 
-    WithButtonT1HeroSectionData, 
     ResourceBasicPreviewData, 
-    SocialSectionData 
+    SocialSectionData,
+    T1HeroSectionData
 } from "../types/GlobalData";
 
-import t1HerosJson from "./T1HeroJson";
-import resourceBasicPreviewsJson from "./ResourceBasicPreviewJson";
-import socialJson from "./SocialJson";
+// import t1HerosJson from "./T1HeroJson";
+// import resourceBasicPreviewsJson from "./ResourceBasicPreviewJson";
+// import socialJson from "./SocialJson";
 
-const t1HeroSectionData: WithButtonT1HeroSectionData = t1HerosJson[0];
+// const t1HeroSectionData: T1HeroSectionData = t1HerosJson[0];
 
 const highlightedSectionData: HighlightedSectionData = {
     highlightedCards: [
@@ -43,19 +43,19 @@ const highlightedSectionData: HighlightedSectionData = {
     ]
 };
 
-const resourceBasicPreview01: ResourceBasicPreviewData = resourceBasicPreviewsJson[0];
+// const resourceBasicPreview01: ResourceBasicPreviewData = resourceBasicPreviewsJson[0];
 
-const resourceBasicPreview02: ResourceBasicPreviewData = resourceBasicPreviewsJson[1];
+// const resourceBasicPreview02: ResourceBasicPreviewData = resourceBasicPreviewsJson[1];
 
-const resourceBasicPreview03: ResourceBasicPreviewData = resourceBasicPreviewsJson[2];
+// const resourceBasicPreview03: ResourceBasicPreviewData = resourceBasicPreviewsJson[2];
 
-const socialSectionData: SocialSectionData = socialJson[0];
+// const socialSectionData: SocialSectionData = socialJson[0];
 
 export {
-    t1HeroSectionData,
+    // t1HeroSectionData,
     highlightedSectionData,
-    resourceBasicPreview01,
-    resourceBasicPreview02,
-    resourceBasicPreview03,
-    socialSectionData
+    // resourceBasicPreview01,
+    // resourceBasicPreview02,
+    // resourceBasicPreview03,
+    // socialSectionData
 }

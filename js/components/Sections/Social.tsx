@@ -12,11 +12,13 @@ interface Props {
 }
 
 function Social({ content }: Props) {
+    const sectionContent = content.socialRef;
+
     return (
         <div id="Social">
             <div className="full-container">
                 <h2 className="text-2xl mb-6 font-bold text-center">
-                    {content.title}
+                    {sectionContent.title}
                 </h2>
                 <div className="flex justify-center">
                     <a href={FACEBOOK_LINK}>

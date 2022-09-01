@@ -50,6 +50,7 @@ interface T1HeroSectionData extends DynamicSection {
         title: string,
         description: string,
         backgroundImage: ImageData,
+        buttonCTA: SimpleButtonData;
     }
 }
 
@@ -62,10 +63,6 @@ interface T2HeroSectionData extends DynamicSection {
         image: ImageData,
         mapsReference: MapsReferenceData
     }
-}
-
-interface WithButtonT1HeroSectionData extends T1HeroSectionData {
-    buttonCTA: SimpleButtonData;
 }
 
 interface HighlightedSectionData {
@@ -92,9 +89,11 @@ interface ResourceBasicPreviewData extends DynamicSection {
 }
 
 interface SocialSectionData extends DynamicSection {
-    id: string;
     __component: 'dynamic-s.social-ref';
-    title: string;
+    socialRef: {
+        id: number;
+        title: string;
+    }
 }
 
 type MapsReferenceData = {
@@ -123,7 +122,6 @@ export {
     SectionData,
     T1HeroSectionData,
     T2HeroSectionData,
-    WithButtonT1HeroSectionData, 
     HighlightedSectionData,
     HighlightedCardData,
     ResourceBasicPreviewData,

@@ -33,6 +33,10 @@ const renderSection = (section: SectionData): JSX.Element => {
 }
 
 function DynamicPage({ sections }: Props) {
+    if (!sections.length) return null;
+
+    sections.sort((sectionA, sectionB) => sectionA.order - sectionB.order);
+
     return (
         <div id="DynamicPage">
             {!!sections.length && sections.map((section, index) => {
