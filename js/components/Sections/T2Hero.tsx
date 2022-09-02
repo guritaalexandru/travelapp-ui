@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { T2HeroSectionData } from "../../utils/types/GlobalData";
+import { T2HeroSectionData } from "../../utils/types/DynamicData";
 import MapsReference from "../Parts/MapsReference";
 
 interface Props {
@@ -7,7 +7,8 @@ interface Props {
 }
 
 function T2Hero({ content }: Props) {
-    const sectionContent = content.t2hero;
+    const sectionContent = content.t2hero?.data?.attributes;
+    const imageData = sectionContent?.image?.data?.attributes;
 
     return (
         <section id="T2HeroSection">
@@ -19,11 +20,11 @@ function T2Hero({ content }: Props) {
                     <p className="text-xl text-black mb-6">
                         {sectionContent.description}
                     </p>
-                    <MapsReference data={sectionContent.mapsReference} />
+                    <MapsReference content={sectionContent.mapsReference} />
                 </div>
                 <div className="relative w-1/2">
                     <div className="background-image">
-                        <Image src={sectionContent.image.url} alt={sectionContent.image.alternativeText}
+                        <Image src={imageData.url} alt={imageData.alternativeText}
                             layout="fill"
                             objectFit="cover"
                         />

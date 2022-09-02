@@ -1,7 +1,7 @@
 import Layout from '../../js/components/Layout';
 import DynamicPage from '../../js/components/Templates/DynamicPage';
 import { getAllPlacesPaths, getPlaceDataByPath } from '../../js/utils/functions/pageDataFunctions';
-import { DynamicPageData } from '../../js/utils/types/GlobalData'
+import { DynamicPageData } from '../../js/utils/types/DynamicData'
 interface Props {
     pageData: DynamicPageData
 }
@@ -21,7 +21,6 @@ export default function Places({ pageData }: Props) {
 
 export async function getStaticProps({ params }) {
     const pageData = await getPlaceDataByPath(params.pid);
-    console.log(pageData);
 
     return {
         props: {

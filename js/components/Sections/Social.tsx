@@ -1,4 +1,4 @@
-import { SocialSectionData } from "../../utils/types/GlobalData";
+import { SocialSectionData } from "../../utils/types/DynamicData";
 import { INSTAGRAM_LINK, FACEBOOK_LINK } from "../../utils/constants/generalConstants"
 import Image from "next/image";
 
@@ -12,7 +12,7 @@ interface Props {
 }
 
 function Social({ content }: Props) {
-    const sectionContent = content.socialRef;
+    const sectionContent = content.socialRef?.data?.attributes;
 
     return (
         <div id="Social">

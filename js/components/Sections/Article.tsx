@@ -1,5 +1,5 @@
 import ButtonCTA from "../Parts/ButtonCTA";
-import { ResourceBasicPreviewData } from "../../utils/types/GlobalData";
+import { ResourceBasicPreviewData } from "../../utils/types/DynamicData";
 import Image from "next/image";
 
 interface Props {
@@ -7,7 +7,8 @@ interface Props {
 }
 
 function Article({ content }: Props) {
-    const sectionContent = content.rbp;
+    const sectionContent = content.rbp?.data?.attributes;
+    const imageData = sectionContent?.image?.data?.attributes;
 
     return (
         <section id={`ResourceBasicPreview-${sectionContent.id}`}>
@@ -25,7 +26,7 @@ function Article({ content }: Props) {
                         <ButtonCTA buttonData={sectionContent.buttonCTA} type="primary" />
                     </div>
                     <div className="w-1/2 relative">
-                        <Image src={sectionContent.image.url} alt={sectionContent.image.alternativeText}
+                        <Image src={imageData.url} alt={imageData.alternativeText}
                             layout="fill"
                             objectFit="cover"
                         />

@@ -1,6 +1,6 @@
 import { 
     DynamicPageData
-} from "../types/GlobalData";
+} from "../types/DynamicData";
 
 // import t1HerosJson from "./T1HeroJson";
 // import socialJson from "./SocialJson";

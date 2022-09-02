@@ -1,4 +1,5 @@
-import { StaticPath, DynamicPageData } from '../types/GlobalData';
+import { StaticPath } from '../types/GlobalData';
+import { DynamicPageData } from '../types/DynamicData';
 import { PlacesPagesPathsResponse } from '../types/FetchTypes';
 
 import { API_URL } from '../constants/generalConstants';
@@ -18,10 +19,12 @@ const getAllPlacesPaths = async () : Promise<StaticPath[]> => {
 }
 
 const getPlaceDataByPath = async (path: string) : Promise<DynamicPageData> => {
-    const pathData = await fetch(`${API_URL}/api/places-pages/${path}`);
-    const pathDataJson : DynamicPageData = await pathData.json();
+    const placePageData = await fetch(`${API_URL}/api/places-pages?filters[href][$eq]=${path}&populate=deep`);
+    const placePageDataJson = await placePageData.json();
     
-    return pathDataJson;
+    const usefulPlacePageData : DynamicPageData = placePageDataJson?.data[0]?.attributes;
+    
+    return usefulPlacePageData;
 }
 
 const getAllArticlesIds = () : StaticPath[] => {

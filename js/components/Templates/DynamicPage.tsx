@@ -4,7 +4,7 @@ import Article from "../Sections/Article";
 import Social from "../Sections/Social";
 import QuickDirections from "../Sections/QuickDirections";
 
-import { SectionData } from '../../utils/types/GlobalData';
+import { SectionData } from '../../utils/types/DynamicData';
 
 interface Props {
     sections: SectionData[]

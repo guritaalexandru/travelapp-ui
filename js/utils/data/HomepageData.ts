@@ -1,8 +1,5 @@
 import { 
     HighlightedSectionData, 
-    ResourceBasicPreviewData, 
-    SocialSectionData,
-    T1HeroSectionData
 } from "../types/GlobalData";
 
 // import t1HerosJson from "./T1HeroJson";
