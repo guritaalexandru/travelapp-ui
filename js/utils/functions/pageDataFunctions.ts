@@ -1,47 +1,83 @@
 import { StaticPath } from '../types/GlobalData';
 import { DynamicPageData } from '../types/DynamicData';
-import { PlacesPagesPathsResponse } from '../types/FetchTypes';
+import { PagesPathsResponse } from '../types/FetchTypes';
 
 import { API_URL } from '../constants/generalConstants';
 
-import {allArticlesPagesData} from '../data/ArticlePagesData';
+const getDynamicPageData = async (type : 'homepage' | 'place' | 'article', path?: string) : Promise<DynamicPageData> => {
+    let data, dataJson, usefulData;
 
-const getAllPlacesPaths = async () : Promise<StaticPath[]> => {
-    const pathData = await fetch(`${API_URL}/api/places-pages/paths`);
-    const pathDataJson : PlacesPagesPathsResponse = await pathData.json();
-    const { placesPaths } = pathDataJson;
+    switch (type) {
+        case 'homepage':
+            data = await fetch(`${API_URL}/api/homepage?populate=deep`);
+            dataJson = await data.json();
+            usefulData = dataJson?.data?.attributes;
+            break;
 
-    return placesPaths.map( path => ({
+        case 'place':
+            data = await fetch(`${API_URL}/api/places-pages?filters[href][$eq]=${path}&populate=deep`);
+            dataJson = await data.json();
+            usefulData = dataJson?.data[0]?.attributes;
+            break;
+
+        case 'article':
+            data = await fetch(`${API_URL}/api/articles-pages?filters[href][$eq]=${path}&populate=deep`);
+            dataJson = await data.json();
+            usefulData = dataJson?.data[0]?.attributes;
+            break;
+    }
+
+    return usefulData;
+}
+
+const getHomepageData = async () : Promise<DynamicPageData> => {
+    return await getDynamicPageData('homepage');
+}
+
+const getPlaceDataByPath = async (path: string) : Promise<DynamicPageData> => {
+    return await getDynamicPageData('place', path);
+}
+
+const getArticleDataByPath = async (path: string) : Promise<DynamicPageData> => {
+    return await getDynamicPageData('article', path);
+}
+
+const getPagesPaths = async (type: 'places' | 'articles') : Promise<StaticPath[]> => {
+    let data;
+
+    switch (type) {
+        case 'places':
+            data = await fetch(`${API_URL}/api/places-pages/paths`);
+            break;
+
+        case 'articles':
+            data = await fetch(`${API_URL}/api/articles-pages/paths`);
+            break;
+    }
+
+    let dataJson : PagesPathsResponse = await data.json();
+
+    const {paths} = dataJson;
+
+    return paths.map( path => ({
         params: {
             pid: path,
         }
     }));
 }
 
-const getPlaceDataByPath = async (path: string) : Promise<DynamicPageData> => {
-    const placePageData = await fetch(`${API_URL}/api/places-pages?filters[href][$eq]=${path}&populate=deep`);
-    const placePageDataJson = await placePageData.json();
-    
-    const usefulPlacePageData : DynamicPageData = placePageDataJson?.data[0]?.attributes;
-    
-    return usefulPlacePageData;
+const getAllPlacesPaths = async () : Promise<StaticPath[]> => {
+    return await getPagesPaths('places');
 }
 
-const getAllArticlesIds = () : StaticPath[] => {
-    return allArticlesPagesData.map(({href}) => ({
-        params: {
-            pid: href,
-        }
-    }));
-}
-
-const getArticleDataById = (href: string) : DynamicPageData | undefined => {
-    return allArticlesPagesData.find(({href: pageId}) => pageId === href);
+const getAllArticlesPaths = async () : Promise<StaticPath[]> => {
+    return await getPagesPaths('articles');
 }
 
 export {
     getAllPlacesPaths,
     getPlaceDataByPath,
-    getAllArticlesIds,
-    getArticleDataById
+    getAllArticlesPaths,
+    getArticleDataByPath,
+    getHomepageData,
 };

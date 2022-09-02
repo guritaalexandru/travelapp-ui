@@ -1,6 +1,6 @@
 import Layout from '../../js/components/Layout';
 import DynamicPage from '../../js/components/Templates/DynamicPage';
-import { getArticleDataById, getAllArticlesIds } from '../../js/utils/functions/pageDataFunctions';
+import { getArticleDataByPath, getAllArticlesPaths } from '../../js/utils/functions/pageDataFunctions';
 import { DynamicPageData } from '../../js/utils/types/DynamicData'
 
 interface Props {
@@ -13,6 +13,7 @@ export default function Article({ pageData }: Props) {
         sections,
         description
     } = pageData;
+
     return (
         <Layout title={title} description={description}>
             <DynamicPage sections={sections} />
@@ -21,7 +22,7 @@ export default function Article({ pageData }: Props) {
 }
 
 export async function getStaticProps({ params }) {
-    const pageData = getArticleDataById(params.pid);
+    const pageData = getArticleDataByPath(params.pid);
     return {
         props: {
             pageData,
@@ -30,7 +31,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const paths = getAllArticlesIds();
+    const paths = getAllArticlesPaths();
     return {
         paths,
         fallback: false,

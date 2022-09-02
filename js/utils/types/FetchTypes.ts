@@ -1,5 +1,5 @@
-interface PlacesPagesPathsResponse {
-    placesPaths: string[];
+interface PagesPathsResponse {
+    paths: string[];
 }
 
-export type { PlacesPagesPathsResponse };
+export type { PagesPathsResponse };
