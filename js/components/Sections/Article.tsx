@@ -24,7 +24,11 @@ function Article({ sectionContent }: Props) {
                                 {sectionContent.description}
                             </p>
                         </div>
-                        <ButtonCTA buttonData={sectionContent.buttonCTA} type="primary" />
+                        {
+                            !!sectionContent.buttonCTA && (
+                                <ButtonCTA buttonData={sectionContent.buttonCTA} type="primary" />
+                            )
+                        }
                     </div>
                     <div className="w-1/2 relative">
                         <Image src={imageUrl} alt={imageAlt}

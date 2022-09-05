@@ -38,7 +38,7 @@ interface T1HeroSectionDataAttributes {
     title: string;
     description: string;
     backgroundImage: ImageData | null;
-    buttonCTA: SimpleButtonData;
+    buttonCTA: SimpleButtonData | null;
 }
 
 interface T2HeroSectionData extends DynamicSection {
@@ -72,7 +72,7 @@ interface ResourceBasicPreviewDataAttributes {
     title: string;
     description: string;
     image: ImageData | null;
-    buttonCTA: SimpleButtonData;
+    buttonCTA: SimpleButtonData | null;
     position: "LEFT" | "RIGHT";
 };
 
@@ -121,7 +121,7 @@ interface QuickDirectionsDataAttributes {
         icon: 'PLANE' | 'TRAIN' | 'BUS';
         destination: string;
     }[];
-    buttonCTA: SimpleButtonData;
+    buttonCTA: SimpleButtonData | null;
 }
 
 interface HighlightedCardData {

@@ -52,7 +52,11 @@ function QuickDirections({ sectionContent }: Props) {
                         )
                     }
                 </div>
-                <ButtonCTA buttonData={sectionContent.buttonCTA} type="primary" />
+                {
+                    !!sectionContent.buttonCTA && (
+                        <ButtonCTA buttonData={sectionContent.buttonCTA} type="primary" />
+                    )
+                }
             </div>
         </section>
     );
