@@ -102,7 +102,7 @@ interface HighlightedSectionData extends DynamicSection {
 interface HighlightedSectionDataAttributes {
     id: number;
     title: string;
-    highlightedCards: HighlightedCardData[];
+    highlightedCards: HighlightedCardData[] | null;
 }
 
 interface QuickDirectionsData extends DynamicSection {
@@ -120,7 +120,7 @@ interface QuickDirectionsDataAttributes {
     directionCards: {
         icon: 'PLANE' | 'TRAIN' | 'BUS';
         destination: string;
-    }[];
+    }[] | null;
     buttonCTA: SimpleButtonData | null;
 }
 

@@ -38,7 +38,7 @@ function QuickDirections({ sectionContent }: Props) {
                 </h2>
                 <div className="flex flex-wrap">
                     {
-                        sectionContent.directionCards.map(
+                        !!sectionContent.directionCards && sectionContent.directionCards.map(
                             (card, index) => (
                                 <div className="w-1/2 flex" key={index}>
                                     {

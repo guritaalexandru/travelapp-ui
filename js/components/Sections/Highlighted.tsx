@@ -11,7 +11,7 @@ function Highlighted({ sectionContent }: Props) {
             <div className="full-container">
                 <div className="flex flex-wrap justify-center">
                     {
-                        sectionContent.highlightedCards.map((card, index) =>
+                        !!sectionContent.highlightedCards && sectionContent.highlightedCards.map((card, index) =>
                             <HighlightedCard
                                 key={index}
                                 cardData={card}
