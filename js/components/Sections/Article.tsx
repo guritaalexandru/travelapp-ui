@@ -34,7 +34,6 @@ function Article({ sectionContent }: Props) {
                     </div>
                 </div>
             </div>
-
         </section>
     );
 }
