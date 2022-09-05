@@ -1,6 +1,6 @@
 import ButtonCTA from "../Parts/ButtonCTA";
 
-import { QuickDirectionsData } from "../../utils/types/GlobalData";
+import { QuickDirectionsData } from "../../utils/types/DynamicData";
 import Image from "next/image";
 import Airplane from "../../../public/SVG/Airplane.svg";
 import Train from "../../../public/SVG/Train.svg";
@@ -30,15 +30,17 @@ type Props = {
 }
 
 function QuickDirections({ content }: Props) {
+    const sectionContent = content.quickDir?.data?.attributes;
+
     return (
         <section id={`QuickDirections-${content.id}`}>
             <div className="full-container">
                 <h2 className="text-2xl mb-6 font-bold text-center">
-                    {content.upperText}
+                    {sectionContent.upperText}
                 </h2>
                 <div className="flex flex-wrap">
                     {
-                        content.instructionCards.map(
+                        sectionContent.directionCards.map(
                             (card, index) => (
                                 <div className="w-1/2 flex" key={index}>
                                     {
@@ -52,7 +54,7 @@ function QuickDirections({ content }: Props) {
                         )
                     }
                 </div>
-                <ButtonCTA buttonData={content.buttonCTA} type="primary" />
+                <ButtonCTA buttonData={sectionContent.buttonCTA} type="primary" />
             </div>
         </section>
     );

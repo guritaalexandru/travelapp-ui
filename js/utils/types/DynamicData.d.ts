@@ -13,7 +13,8 @@ type SectionData =
     | T2HeroSectionData
     | ResourceBasicPreviewData
     | SocialSectionData
-    | HighlightedSectionData;
+    | HighlightedSectionData
+    | QuickDirectionsData;
 
 interface DynamicSection {
     id: number;
@@ -90,6 +91,22 @@ interface HighlightedSectionData extends DynamicSection {
     };
 }
 
+interface QuickDirectionsData extends DynamicSection {
+    __component: 'dynamic-s.quick-dir-ref',
+    quickDir: {
+        data: {
+            attributes: {
+                upperText: string;
+                directionCards: {
+                    icon: 'PLANE' | 'TRAIN' | 'BUS';
+                    destination: string;
+                }[];
+                buttonCTA: SimpleButtonData;
+            }
+        }
+    }
+}
+
 interface HighlightedCardData {
     title: string;
     image: ImageData;
@@ -147,4 +164,5 @@ export{
     HighlightedCardData,
     ImageData,
     MapsReferenceData,
+    QuickDirectionsData,
 }

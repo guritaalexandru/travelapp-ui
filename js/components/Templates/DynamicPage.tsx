@@ -3,7 +3,6 @@ import T2Hero from "../Sections/T2Hero";
 import Article from "../Sections/Article";
 import Social from "../Sections/Social";
 import Highlighted from "../Sections/Highlighted";
-
 import QuickDirections from "../Sections/QuickDirections";
 
 import { SectionData } from '../../utils/types/DynamicData';
@@ -19,6 +18,9 @@ const renderSection = (section: SectionData): JSX.Element => {
 
         case 'dynamic-s.t2-hero-ref':
             return <T2Hero content={section} />;
+
+        case 'dynamic-s.quick-dir-ref':
+            return <QuickDirections content={section} />;
 
         case 'dynamic-s.rbp-ref':
             return <Article content={section} />;
