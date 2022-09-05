@@ -1,4 +1,4 @@
-import { SocialSectionData } from "../../utils/types/DynamicData";
+import { SocialSectionDataAttributes } from "../../utils/types/DynamicData";
 import { INSTAGRAM_LINK, FACEBOOK_LINK } from "../../utils/constants/generalConstants"
 import Image from "next/image";
 
@@ -8,16 +8,10 @@ import Instagram from '../../../public/SVG/Instagram.svg';
 const ICON_SIZE = 50;
 
 interface Props {
-    content: SocialSectionData;
+    sectionContent: SocialSectionDataAttributes;
 }
 
-function Social({ content }: Props) {
-    const sectionContent = content.socialRef?.data?.attributes;
-
-    if (!sectionContent) {
-        console.warn("Social section content is undefined");
-        return null;
-    }
+function Social({ sectionContent }: Props) {
     return (
         <div id="Social">
             <div className="full-container">

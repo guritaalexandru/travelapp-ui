@@ -1,24 +1,21 @@
 import ButtonCTA from "../Parts/ButtonCTA";
 import Image from "next/image";
-import { T1HeroSectionData } from "../../utils/types/DynamicData";
+import { T1HeroSectionDataAttributes } from "../../utils/types/DynamicData";
+import { getImageProperties } from '../../utils/functions/utils';
 
 interface Props {
-    content: T1HeroSectionData;
+    sectionContent: T1HeroSectionDataAttributes;
 }
 
-function T1Hero({ content }: Props) {
-    const sectionContent = content.t1hero?.data?.attributes;
-    const imageData = sectionContent?.backgroundImage?.data?.attributes;
+function T1Hero({ sectionContent }: Props) {
+    const imageData = sectionContent?.backgroundImage;
+    const { imageUrl, imageAlt, } = getImageProperties(imageData);
 
-    if (!sectionContent) {
-        console.warn("T1Hero section content is undefined");
-        return null;
-    }
     return (
         <section id="T1HeroSection">
             <div className="relative">
                 <div className="background-image">
-                    <Image src={imageData.url} alt={imageData.alternativeText}
+                    <Image src={imageUrl} alt={imageAlt}
                         layout="fill"
                         objectFit="cover"
                     />

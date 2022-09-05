@@ -1,19 +1,16 @@
 import ButtonCTA from "../Parts/ButtonCTA";
-import { ResourceBasicPreviewData } from "../../utils/types/DynamicData";
+import { ResourceBasicPreviewDataAttributes } from "../../utils/types/DynamicData";
 import Image from "next/image";
+import { getImageProperties } from '../../utils/functions/utils';
 
 interface Props {
-    content: ResourceBasicPreviewData;
+    sectionContent: ResourceBasicPreviewDataAttributes;
 }
 
-function Article({ content }: Props) {
-    const sectionContent = content.rbp?.data?.attributes;
-    const imageData = sectionContent?.image?.data?.attributes;
+function Article({ sectionContent }: Props) {
+    const imageData = sectionContent?.image;
+    const { imageUrl, imageAlt, } = getImageProperties(imageData);
 
-    if (!sectionContent) {
-        console.warn("ResourceBasicPreview section content is undefined");
-        return null;
-    }
     return (
         <section id={`ResourceBasicPreview-${sectionContent.id}`}>
             <div className="full-container">
@@ -30,7 +27,7 @@ function Article({ content }: Props) {
                         <ButtonCTA buttonData={sectionContent.buttonCTA} type="primary" />
                     </div>
                     <div className="w-1/2 relative">
-                        <Image src={imageData.url} alt={imageData.alternativeText}
+                        <Image src={imageUrl} alt={imageAlt}
                             layout="fill"
                             objectFit="cover"
                         />

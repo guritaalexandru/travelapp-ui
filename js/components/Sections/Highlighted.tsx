@@ -1,17 +1,11 @@
-import { HighlightedSectionData } from "../../utils/types/DynamicData";
+import { HighlightedSectionDataAttributes } from "../../utils/types/DynamicData";
 import HighlightedCard from "../Parts/HighlightedCard";
 
 interface Props {
-    content: HighlightedSectionData;
+    sectionContent: HighlightedSectionDataAttributes;
 }
 
-function Highlighted({ content }: Props) {
-    const sectionContent = content.HLCards?.data?.attributes;
-
-    if (!sectionContent) {
-        console.warn("Highlighted section content is undefined");
-        return null;
-    }
+function Highlighted({ sectionContent }: Props) {
     return (
         <section id="HighlightedSection">
             <div className="full-container">

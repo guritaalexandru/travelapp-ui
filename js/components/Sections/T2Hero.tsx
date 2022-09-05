@@ -1,19 +1,16 @@
 import Image from "next/image";
-import { T2HeroSectionData } from "../../utils/types/DynamicData";
+import { T2HeroSectionDataAttributes } from "../../utils/types/DynamicData";
 import MapsReference from "../Parts/MapsReference";
+import { getImageProperties } from '../../utils/functions/utils';
 
 interface Props {
-    content: T2HeroSectionData;
+    sectionContent: T2HeroSectionDataAttributes;
 }
 
-function T2Hero({ content }: Props) {
-    const sectionContent = content.t2hero?.data?.attributes;
-    const imageData = sectionContent?.image?.data?.attributes;
+function T2Hero({ sectionContent }: Props) {
+    const imageData = sectionContent?.image;
+    const { imageUrl, imageAlt, } = getImageProperties(imageData);
 
-    if (!sectionContent) {
-        console.warn("T2Hero section content is undefined");
-        return null;
-    }
     return (
         <section id="T2HeroSection">
             <div className="full-container flex">
@@ -26,14 +23,14 @@ function T2Hero({ content }: Props) {
                         {sectionContent.description}
                     </p>
                     {
-                        !!sectionContent.mapsReference && (
-                            <MapsReference content={sectionContent.mapsReference} />
+                        !!sectionContent.mapsReference?.data && (
+                            <MapsReference componentContent={sectionContent.mapsReference.data.attributes} />
                         )
                     }
                 </div>
                 <div className="relative w-1/2">
                     <div className="background-image">
-                        <Image src={imageData.url} alt={imageData.alternativeText}
+                        <Image src={imageUrl} alt={imageAlt}
                             layout="fill"
                             objectFit="cover"
                         />

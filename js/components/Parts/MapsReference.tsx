@@ -1,5 +1,5 @@
 import { MAPS_REFERENCE_TILE } from '../../utils/constants/generalConstants'
-import { MapsReferenceData } from '../../utils/types/DynamicData'
+import { MapsReferenceDataAttributes } from '../../utils/types/DynamicData'
 import Image from "next/image";
 
 import AppleMaps from '../../../public/SVG/AppleMaps.svg'
@@ -8,11 +8,10 @@ import GoogleMaps from '../../../public/SVG/GoogleMaps.svg'
 const ICON_SIZE = 50;
 
 type Props = {
-    content: MapsReferenceData
+    componentContent: MapsReferenceDataAttributes
 }
 
-function MapsReference({ content }: Props) {
-    const componentContent = content.data.attributes;
+function MapsReference({ componentContent }: Props) {
 
     return (
         <div id={`MapsReference-${componentContent.id}`}>

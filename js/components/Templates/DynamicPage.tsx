@@ -12,24 +12,56 @@ interface Props {
 }
 
 const renderSection = (section: SectionData): JSX.Element => {
+    let sectionContent;
+
     switch (section.__component) {
         case 'dynamic-s.t1-hero-ref':
-            return <T1Hero content={section} />;
+            sectionContent = section.t1hero?.data?.attributes;
+            if (!sectionContent) {
+                console.warn("T1Hero section content is undefined");
+                return <></>;
+            }
+            return <T1Hero sectionContent={sectionContent} />;
 
         case 'dynamic-s.t2-hero-ref':
-            return <T2Hero content={section} />;
+            sectionContent = section.t2hero?.data?.attributes;
+            if (!sectionContent) {
+                console.warn("T2Hero section content is undefined");
+                return <></>;
+            }
+            return <T2Hero sectionContent={sectionContent} />;
 
         case 'dynamic-s.quick-dir-ref':
-            return <QuickDirections content={section} />;
+            sectionContent = section.quickDir?.data?.attributes;
+            if (!sectionContent) {
+                console.warn("QuickDirections section content is undefined");
+                return <></>;
+            }
+            return <QuickDirections sectionContent={sectionContent} />;
 
         case 'dynamic-s.rbp-ref':
-            return <Article content={section} />;
+            sectionContent = section.rbp?.data?.attributes;
+            if (!sectionContent) {
+                console.warn("RBP section content is undefined");
+                return <></>;
+            }
+            return <Article sectionContent={sectionContent} />;
 
         case 'dynamic-s.hl-cards-ref':
-            return <Highlighted content={section} />;
+            sectionContent = section.HLCards?.data?.attributes;
+            if (!sectionContent) {
+                console.warn("Highlighted section content is undefined");
+                return <></>;
+            }
+            return <Highlighted sectionContent={sectionContent} />;
 
         case 'dynamic-s.social-ref':
-            return <Social content={section} />;
+            sectionContent = section.socialRef?.data?.attributes;
+            if (!sectionContent) {
+                console.warn("Social section content is undefined");
+                return <></>;
+            }
+            return <Social sectionContent={sectionContent} />;
 
         default:
             return <></>;
