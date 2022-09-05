@@ -24,7 +24,6 @@ function HighlightedCard({ cardData }: Props) {
                 <h2 className="text-2xl text-white mb-6 font-bold text-center">
                     {cardData.title}
                 </h2>
-                <ButtonCTA buttonData={cardData.buttonCTA} type="primary" />
             </div>
         </div>
     );

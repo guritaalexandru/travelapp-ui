@@ -127,7 +127,6 @@ interface QuickDirectionsDataAttributes {
 interface HighlightedCardData {
     title: string;
     image: ImageData | null;
-    buttonCTA: SimpleButtonData;
 }
 
 type MapsReferenceData = {
