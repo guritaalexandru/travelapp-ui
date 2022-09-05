@@ -10,6 +10,10 @@ function Article({ content }: Props) {
     const sectionContent = content.rbp?.data?.attributes;
     const imageData = sectionContent?.image?.data?.attributes;
 
+    if (!sectionContent) {
+        console.warn("ResourceBasicPreview section content is undefined");
+        return null;
+    }
     return (
         <section id={`ResourceBasicPreview-${sectionContent.id}`}>
             <div className="full-container">

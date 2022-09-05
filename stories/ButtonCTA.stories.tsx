@@ -12,7 +12,7 @@ const Template: ComponentStory<typeof ButtonCTA> = (args) => <ButtonCTA {...args
 
 export const Default = Template.bind({});
 Default.args = {
-    href: '/',
-    text: 'ButtonCTA',
-    type: 'primary',
+  // href: '/',
+  // text: 'ButtonCTA',
+  // type: 'primary',
 };

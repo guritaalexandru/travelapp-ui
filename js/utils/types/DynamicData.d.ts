@@ -1,4 +1,7 @@
 import {SimpleButtonData} from './GlobalData';
+interface DynamicPageProps {
+    pageData: DynamicPageData
+}
 
 interface DynamicPageData {
     id: string;
@@ -33,7 +36,7 @@ interface T1HeroSectionData extends DynamicSection {
                 buttonCTA: SimpleButtonData;
             };
         };
-    };
+    } | null;
 }
 
 interface T2HeroSectionData extends DynamicSection {
@@ -45,10 +48,10 @@ interface T2HeroSectionData extends DynamicSection {
                 title: string;
                 description: string;
                 image: ImageData;
-                mapsReference: MapsReferenceData;
+                mapsReference: MapsReferenceData | null;
             };
         };
-    };
+    } | null;
 }
 
 interface ResourceBasicPreviewData extends DynamicSection {
@@ -64,7 +67,7 @@ interface ResourceBasicPreviewData extends DynamicSection {
                 position: "LEFT" | "RIGHT";
             };
         };
-    };
+    } | null;
 }
 
 interface SocialSectionData extends DynamicSection {
@@ -76,7 +79,7 @@ interface SocialSectionData extends DynamicSection {
                 title: string;
             };
         };
-    };
+    } | null;
 }
 
 interface HighlightedSectionData extends DynamicSection {
@@ -88,7 +91,7 @@ interface HighlightedSectionData extends DynamicSection {
                 highlightedCards: HighlightedCardData[];
             }
         };
-    };
+    } | null;
 }
 
 interface QuickDirectionsData extends DynamicSection {
@@ -104,7 +107,7 @@ interface QuickDirectionsData extends DynamicSection {
                 buttonCTA: SimpleButtonData;
             }
         }
-    }
+    } | null;
 }
 
 interface HighlightedCardData {
@@ -154,6 +157,7 @@ interface ImageData {
 }
 
 export{
+    DynamicPageProps,
     DynamicPageData,
     SectionData,
     T1HeroSectionData,

@@ -1,3 +1,9 @@
+interface UrlParamsProps {
+    params: {
+        pid: string
+    };
+}
+
 interface StaticPath {
     params: {
         pid: string;
@@ -10,6 +16,7 @@ interface SimpleButtonData {
 }
 
 export {
+    UrlParamsProps,
     StaticPath,
     SimpleButtonData,
 };

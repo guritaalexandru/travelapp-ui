@@ -2,13 +2,9 @@ import Layout from '../../js/components/Layout';
 import DynamicPage from '../../js/components/Templates/DynamicPage';
 import { getPlaceDataByPath } from '../../js/utils/functions/pageDataFunctions';
 
-import { DynamicPageData } from '../../js/utils/types/DynamicData'
+import { DynamicPageProps } from '../../js/utils/types/DynamicData'
 
-interface Props {
-  pageData: DynamicPageData
-}
-
-export default function PlacesCollection({ pageData }: Props) {
+export default function PlacesCollection({ pageData }: DynamicPageProps) {
   const {
     title,
     sections,

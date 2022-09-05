@@ -32,6 +32,10 @@ type Props = {
 function QuickDirections({ content }: Props) {
     const sectionContent = content.quickDir?.data?.attributes;
 
+    if (!sectionContent) {
+        console.warn("QuickDirections section content is undefined");
+        return null;
+    }
     return (
         <section id={`QuickDirections-${content.id}`}>
             <div className="full-container">

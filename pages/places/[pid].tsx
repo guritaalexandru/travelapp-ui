@@ -2,13 +2,10 @@ import Layout from '../../js/components/Layout';
 import DynamicPage from '../../js/components/Templates/DynamicPage';
 import { getAllPlacesPaths, getPlaceDataByPath } from '../../js/utils/functions/pageDataFunctions';
 
-import { DynamicPageData } from '../../js/utils/types/DynamicData'
+import { DynamicPageProps } from '../../js/utils/types/DynamicData'
+import { UrlParamsProps } from '../../js/utils/types/GlobalData'
 
-interface Props {
-    pageData: DynamicPageData
-}
-
-export default function Places({ pageData }: Props) {
+export default function Places({ pageData }: DynamicPageProps) {
     const {
         title,
         sections,
@@ -22,7 +19,7 @@ export default function Places({ pageData }: Props) {
     )
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps({ params }: UrlParamsProps) {
     const pageData = await getPlaceDataByPath(params.pid);
 
     return {

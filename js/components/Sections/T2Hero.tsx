@@ -10,9 +10,14 @@ function T2Hero({ content }: Props) {
     const sectionContent = content.t2hero?.data?.attributes;
     const imageData = sectionContent?.image?.data?.attributes;
 
+    if (!sectionContent) {
+        console.warn("T2Hero section content is undefined");
+        return null;
+    }
     return (
         <section id="T2HeroSection">
             <div className="full-container flex">
+
                 <div className="w-1/2 flex flex-col justify-end h-120 2xl:h-96">
                     <h1 className="text-5xl text-black mb-6 font-bold">
                         {sectionContent.title}
@@ -20,7 +25,11 @@ function T2Hero({ content }: Props) {
                     <p className="text-xl text-black mb-6">
                         {sectionContent.description}
                     </p>
-                    <MapsReference content={sectionContent.mapsReference} />
+                    {
+                        !!sectionContent.mapsReference && (
+                            <MapsReference content={sectionContent.mapsReference} />
+                        )
+                    }
                 </div>
                 <div className="relative w-1/2">
                     <div className="background-image">

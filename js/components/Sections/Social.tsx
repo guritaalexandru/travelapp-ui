@@ -14,6 +14,10 @@ interface Props {
 function Social({ content }: Props) {
     const sectionContent = content.socialRef?.data?.attributes;
 
+    if (!sectionContent) {
+        console.warn("Social section content is undefined");
+        return null;
+    }
     return (
         <div id="Social">
             <div className="full-container">

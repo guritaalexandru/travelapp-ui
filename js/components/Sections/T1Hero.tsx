@@ -10,6 +10,10 @@ function T1Hero({ content }: Props) {
     const sectionContent = content.t1hero?.data?.attributes;
     const imageData = sectionContent?.backgroundImage?.data?.attributes;
 
+    if (!sectionContent) {
+        console.warn("T1Hero section content is undefined");
+        return null;
+    }
     return (
         <section id="T1HeroSection">
             <div className="relative">

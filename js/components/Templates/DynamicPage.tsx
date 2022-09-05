@@ -31,11 +31,8 @@ const renderSection = (section: SectionData): JSX.Element => {
         case 'dynamic-s.social-ref':
             return <Social content={section} />;
 
-        // case 'QuickDirections':
-        //     return <QuickDirections content={section} />;
-
         default:
-            return null;
+            return <></>;
     }
 }
 
