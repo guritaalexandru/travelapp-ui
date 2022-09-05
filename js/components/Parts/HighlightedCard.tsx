@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { HighlightedCardData } from '../../utils/types/GlobalData'
+import { HighlightedCardData } from '../../utils/types/DynamicData'
 import ButtonCTA from "./ButtonCTA";
 
 interface Props {
@@ -8,10 +8,12 @@ interface Props {
 }
 
 function HighlightedCard({ cardData }: Props) {
+    const imageData = cardData?.image?.data?.attributes;
+
     return (
         <div className='relative w-1/3 lg:w-1/2 md:w-full'>
             <div className="background-image">
-                <Image src={cardData.imgHref} alt={cardData.imgAlt}
+                <Image src={imageData.url} alt={imageData.alternativeText}
                     layout="fill"
                     objectFit="cover"
                 />

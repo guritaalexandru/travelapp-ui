@@ -12,7 +12,8 @@ type SectionData =
     | T1HeroSectionData
     | T2HeroSectionData
     | ResourceBasicPreviewData
-    | SocialSectionData;
+    | SocialSectionData
+    | HighlightedSectionData;
 
 interface DynamicSection {
     id: number;
@@ -77,6 +78,24 @@ interface SocialSectionData extends DynamicSection {
     };
 }
 
+interface HighlightedSectionData extends DynamicSection {
+    __component: "dynamic-s.hl-cards-ref";
+    HLCards: {
+        data: {
+            attributes: {
+                title: string;
+                highlightedCards: HighlightedCardData[];
+            }
+        };
+    };
+}
+
+interface HighlightedCardData {
+    title: string;
+    image: ImageData;
+    buttonCTA: SimpleButtonData;
+}
+
 type MapsReferenceData = {
     data: {
         attributes: {
@@ -124,6 +143,8 @@ export{
     T2HeroSectionData,
     ResourceBasicPreviewData,
     SocialSectionData,
+    HighlightedSectionData,
+    HighlightedCardData,
     ImageData,
     MapsReferenceData,
 }

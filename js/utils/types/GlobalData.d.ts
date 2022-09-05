@@ -9,17 +9,6 @@ interface SimpleButtonData {
     href: string;
 }
 
-interface HighlightedSectionData {
-    highlightedCards: HighlightedCardData[];
-}
-
-interface HighlightedCardData {
-    title: string;
-    imgHref: string;
-    imgAlt: string;
-    buttonCTA: SimpleButtonData;
-}
-
 // type QuickDirectionsData = {
 //     id: string;
 //     __component: 'dynamic-s.t2-hero-ref',
@@ -34,7 +23,5 @@ interface HighlightedCardData {
 export {
     StaticPath,
     SimpleButtonData,
-    HighlightedSectionData,
-    HighlightedCardData,
     QuickDirectionsData,
 };

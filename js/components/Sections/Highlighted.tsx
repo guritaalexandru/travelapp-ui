@@ -1,4 +1,4 @@
-import { HighlightedSectionData } from "../../utils/types/GlobalData";
+import { HighlightedSectionData } from "../../utils/types/DynamicData";
 import HighlightedCard from "../Parts/HighlightedCard";
 
 interface Props {
@@ -6,7 +6,9 @@ interface Props {
 }
 
 function Highlighted({ content }: Props) {
-    const { highlightedCards } = content;
+    const sectionContent = content.HLCards?.data?.attributes;
+
+    const { highlightedCards } = sectionContent;
     return (
         <section id="HighlightedSection">
             <div className="full-container">

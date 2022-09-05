@@ -2,6 +2,8 @@ import T1Hero from "../Sections/T1Hero";
 import T2Hero from "../Sections/T2Hero";
 import Article from "../Sections/Article";
 import Social from "../Sections/Social";
+import Highlighted from "../Sections/Highlighted";
+
 import QuickDirections from "../Sections/QuickDirections";
 
 import { SectionData } from '../../utils/types/DynamicData';
@@ -12,14 +14,17 @@ interface Props {
 
 const renderSection = (section: SectionData): JSX.Element => {
     switch (section.__component) {
-        case 'dynamic-s.rbp-ref':
-            return <Article content={section} />;
-
         case 'dynamic-s.t1-hero-ref':
             return <T1Hero content={section} />;
 
         case 'dynamic-s.t2-hero-ref':
             return <T2Hero content={section} />;
+
+        case 'dynamic-s.rbp-ref':
+            return <Article content={section} />;
+
+        case 'dynamic-s.hl-cards-ref':
+            return <Highlighted content={section} />;
 
         case 'dynamic-s.social-ref':
             return <Social content={section} />;
