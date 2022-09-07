@@ -51,11 +51,7 @@ const getPagesPaths = async (type: 'places' | 'articles') : Promise<StaticPath[]
             break;
 
         case 'articles':
-            console.log(`${API_URL}/api/articles-pages/paths`);
-            
             data = await fetch(`${API_URL}/api/articles-pages/paths`);
-            console.log(data);
-
             break;
     }
 

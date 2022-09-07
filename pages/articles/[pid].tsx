@@ -20,7 +20,7 @@ export default function Article({ pageData }: DynamicPageProps) {
 }
 
 export async function getStaticProps({ params }: UrlParamsProps) {
-    const pageData = getArticleDataByPath(params.pid);
+    const pageData = await getArticleDataByPath(params.pid);
     return {
         props: {
             pageData,
@@ -29,7 +29,9 @@ export async function getStaticProps({ params }: UrlParamsProps) {
 }
 
 export async function getStaticPaths() {
-    const paths = getAllArticlesPaths();
+    const paths = await getAllArticlesPaths();
+    console.log(paths);
+
     return {
         paths,
         fallback: false,
