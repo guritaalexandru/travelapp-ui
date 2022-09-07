@@ -1,17 +1,17 @@
 import Layout from '../../js/components/Layout';
 import DynamicPage from '../../js/components/Templates/DynamicPage';
-import { getAllPlacesIds, getPlaceDataById } from '../../js/utils/functions/pageDataFunctions';
-import { DynamicPageData } from '../../js/utils/types/GlobalData'
-interface Props {
-    pageData: DynamicPageData
-}
+import { getAllPlacesPaths, getPlaceDataByPath } from '../../js/utils/functions/pageDataFunctions';
 
-export default function Places({ pageData }: Props) {
+import { DynamicPageProps } from '../../js/utils/types/DynamicData'
+import { UrlParamsProps } from '../../js/utils/types/GlobalData'
+
+export default function Places({ pageData }: DynamicPageProps) {
     const {
         title,
         sections,
         description
     } = pageData;
+
     return (
         <Layout title={title} description={description}>
             <DynamicPage sections={sections} />
@@ -19,8 +19,9 @@ export default function Places({ pageData }: Props) {
     )
 }
 
-export async function getStaticProps({ params }) {
-    const pageData = getPlaceDataById(params.pid);
+export async function getStaticProps({ params }: UrlParamsProps) {
+    const pageData = await getPlaceDataByPath(params.pid);
+
     return {
         props: {
             pageData,
@@ -29,7 +30,7 @@ export async function getStaticProps({ params }) {
 }
 
 export async function getStaticPaths() {
-    const paths = getAllPlacesIds();
+    const paths = await getAllPlacesPaths();
     return {
         paths,
         fallback: false,

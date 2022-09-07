@@ -1,27 +1,36 @@
 import Image from "next/image";
-import { T2HeroSectionData } from "../../utils/types/GlobalData";
+import { T2HeroSectionDataAttributes } from "../../utils/types/DynamicData";
 import MapsReference from "../Parts/MapsReference";
+import { getImageProperties } from '../../utils/functions/utils';
 
 interface Props {
-    content: T2HeroSectionData;
+    sectionContent: T2HeroSectionDataAttributes;
 }
 
-function T1Hero({ content }: Props) {
+function T2Hero({ sectionContent }: Props) {
+    const imageData = sectionContent?.image;
+    const { imageUrl, imageAlt, } = getImageProperties(imageData);
+
     return (
         <section id="T2HeroSection">
             <div className="full-container flex">
+
                 <div className="w-1/2 flex flex-col justify-end h-120 2xl:h-96">
                     <h1 className="text-5xl text-black mb-6 font-bold">
-                        {content.title}
+                        {sectionContent.title}
                     </h1>
                     <p className="text-xl text-black mb-6">
-                        {content.description}
+                        {sectionContent.description}
                     </p>
-                    <MapsReference data={content.mapsReference} />
+                    {
+                        !!sectionContent.mapsReference?.data && (
+                            <MapsReference componentContent={sectionContent.mapsReference.data.attributes} />
+                        )
+                    }
                 </div>
                 <div className="relative w-1/2">
                     <div className="background-image">
-                        <Image src={content.imgHref} alt={content.imgAlt}
+                        <Image src={imageUrl} alt={imageAlt}
                             layout="fill"
                             objectFit="cover"
                         />
@@ -32,4 +41,4 @@ function T1Hero({ content }: Props) {
     );
 }
 
-export default T1Hero;
+export default T2Hero;

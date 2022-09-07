@@ -1,18 +1,17 @@
-import { HighlightedSectionData } from "../../utils/types/GlobalData";
+import { HighlightedSectionDataAttributes } from "../../utils/types/DynamicData";
 import HighlightedCard from "../Parts/HighlightedCard";
 
 interface Props {
-    content: HighlightedSectionData;
+    sectionContent: HighlightedSectionDataAttributes;
 }
 
-function Highlighted({ content }: Props) {
-    const { highlightedCards } = content;
+function Highlighted({ sectionContent }: Props) {
     return (
         <section id="HighlightedSection">
             <div className="full-container">
                 <div className="flex flex-wrap justify-center">
                     {
-                        highlightedCards.map((card, index) =>
+                        !!sectionContent.highlightedCards && sectionContent.highlightedCards.map((card, index) =>
                             <HighlightedCard
                                 key={index}
                                 cardData={card}
