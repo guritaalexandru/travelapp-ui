@@ -3,8 +3,34 @@ import placeholderImage from '../../../public/PlaceholderImage.png';
 const PLACEHOLDER_IMAGE =  placeholderImage;
 const PLACEHOLDER_IMAGE_ALT = 'Placeholder image';
 
-const WEB_URL = process.env.ENVIRONMENT === 'development' ? 'http://localhost:3000' : 'https://glimpseofromania.com';
-const API_URL = process.env.ENVIRONMENT === 'development' ? 'http://localhost:1337' : 'https://cms-glimpseofromania.com';
+const getEnvWebUrl = (envEnvironment : string | undefined) => {
+    switch (envEnvironment) {
+        case 'development':
+            return 'http://localhost:3000';
+        case 'staging':
+            return 'https://glimpseofromania.com';
+        case 'production':
+            return 'https://glimpseofromania.com';
+        default:
+            return '';
+    }
+}
+
+const getEnvApiUrl = (envEnvironment : string | undefined) => {
+    switch (envEnvironment) {
+        case 'development':
+            return 'http://localhost:1337';
+        case 'staging':
+            return 'https://cms-glimpseofromania.com';
+        case 'production':
+            return 'https://cms-glimpseofromania.com';
+        default:
+            return '';
+    }
+}
+
+const WEB_URL = getEnvWebUrl(process.env.ENVIRONMENT);
+const API_URL = getEnvApiUrl(process.env.ENVIRONMENT);
 
 const INSTAGRAM_LINK = 'https://www.instagram.com/';
 const FACEBOOK_LINK = 'https://www.facebook.com/';

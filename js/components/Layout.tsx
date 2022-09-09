@@ -5,10 +5,11 @@ import Footer from './Sections/Footer';
 type Props = {
     title: string;
     description: string;
+    noLayout?: boolean;
     children: React.ReactNode;
 }
 
-function Layout({ title, description, children }: Props) {
+function Layout({ title, description, noLayout, children }: Props) {
     return (
         <div>
             <Head>
@@ -17,13 +18,13 @@ function Layout({ title, description, children }: Props) {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Header />
+            {!noLayout && <Header />}
 
             <main>
                 {children}
             </main>
 
-            <Footer />
+            {!noLayout && <Footer />}
 
         </div>
     );
