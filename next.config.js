@@ -7,7 +7,7 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   async redirects() {
-    if (process.env.NODE_ENV === 'production') {
+    if (process.env.ENVIRONMENT === 'production') {
       return [
         {
           source: '/:path((?!coming-soon$).*)',
