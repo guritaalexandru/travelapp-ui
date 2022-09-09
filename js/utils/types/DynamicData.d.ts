@@ -17,7 +17,8 @@ type SectionData =
     | ResourceBasicPreviewData
     | SocialSectionData
     | HighlightedSectionData
-    | QuickDirectionsData;
+    | QuickDirectionsData
+    | RandomPlaceSectionData;
 
 interface DynamicSection {
     id: number;
@@ -124,6 +125,20 @@ interface QuickDirectionsDataAttributes {
     buttonCTA: SimpleButtonData | null;
 }
 
+interface RandomPlaceSectionData extends DynamicSection {
+    __component: 'dynamic-s.rnd-place-ref',
+    rndPlace: {
+        data: {
+            attributes: RandomPlaceSectionDataAttributes;
+        } | null
+    } | null;
+}
+
+interface RandomPlaceSectionDataAttributes {
+    id: number;
+    title: string;
+    buttonText: string;
+}
 interface HighlightedCardData {
     title: string;
     image: ImageData | null;
@@ -186,6 +201,7 @@ export{
     ResourceBasicPreviewDataAttributes,
     SocialSectionDataAttributes,
     HighlightedSectionDataAttributes,
+    RandomPlaceSectionDataAttributes,
     HighlightedCardData,
     ImageData,
     MapsReferenceDataAttributes,
