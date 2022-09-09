@@ -59,7 +59,8 @@ const getPagesPaths = async (type: 'places' | 'articles') : Promise<StaticPath[]
 
     const {paths} = dataJson;
 
-    return paths.map( path => ({
+    //filter out index path
+    return paths.filter(path => path !== 'index').map( path => ({
         params: {
             pid: path,
         }

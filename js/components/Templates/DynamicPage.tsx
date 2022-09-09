@@ -4,6 +4,7 @@ import Article from "../Sections/Article";
 import Social from "../Sections/Social";
 import Highlighted from "../Sections/Highlighted";
 import QuickDirections from "../Sections/QuickDirections";
+import RandomPlace from "../Sections/RandomPlace";
 
 import { SectionData } from '../../utils/types/DynamicData';
 
@@ -62,6 +63,14 @@ const renderSection = (section: SectionData): JSX.Element => {
                 return <></>;
             }
             return <Social sectionContent={sectionContent} />;
+
+        case 'dynamic-s.rnd-place-ref':
+            sectionContent = section.rndPlace?.data?.attributes;
+            if (!sectionContent) {
+                console.warn("Random place section content is undefined");
+                return <></>;
+            }
+            return <RandomPlace sectionContent={sectionContent} />;
 
         default:
             return <></>;
