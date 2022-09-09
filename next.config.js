@@ -7,7 +7,6 @@ const nextConfig = {
     imageSizes: [16, 32, 48, 64, 96, 128, 256, 384],
   },
   async redirects() {
-    console.log(process.env.NODE_ENV);
     if (process.env.NODE_ENV === 'production') {
       return [
         {
