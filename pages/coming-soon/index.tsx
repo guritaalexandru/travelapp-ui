@@ -1,11 +1,10 @@
 import Layout from '../../js/components/Layout';
+import ComingSoonPage from '../../js/components/Templates/ComingSoonPage';
 
 export default function ComingSoon() {
   return (
     <Layout title={'Coming soon'} description={''} noLayout={true}>
-      <div>
-        <h1>Coming soon</h1>
-      </div>
+      <ComingSoonPage />
     </Layout>
   )
 }
