@@ -1,9 +1,27 @@
 import React from 'react';
 
-const MailchimpInputField = props => {
+type Props = {
+    label: string;
+}
 
-    const validateInput = values => {
-        if (values.some(f => f === "") || values[0].indexOf("@") === -1) {
+interface SubmitProps extends Props {
+    type: 'submit';
+    formValues: string[];
+}
+
+interface TextInputProps extends Props {
+    type: 'email' | 'text' | 'textarea';
+    value: string;
+    onChangeHandler(value: string): void;
+    name?: string;
+    isRequired: boolean;
+    placeholder: string;
+}
+
+const MailchimpInputField = (props: SubmitProps | TextInputProps) => {
+
+    const validateInput = (values: string[]) => {
+        if (values.some((f: string) => f === "") || values[0].indexOf("@") === -1) {
             return true
         } else {
             return false

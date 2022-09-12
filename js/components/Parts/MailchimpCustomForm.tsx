@@ -1,14 +1,20 @@
 import React, { useState } from 'react';
 
-import MailchimpSubscribe from "react-mailchimp-subscribe";
 import MailchimpInputField from "./MailchimpInputField";
+import { NewNameFormFields } from '../../utils/types/GlobalData'
 
-const MailchimpCustomForm = ({ status, message, onValidated }) => {
+type Props = {
+    status: "sending" | "error" | "success" | null;
+    message: string | Error | null;
+    onValidated: (formData: NewNameFormFields) => void;
+}
+
+const MailchimpCustomForm = ({ status, message, onValidated }: Props) => {
     const [email, setEmail] = useState('');
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         email &&
             firstName &&
@@ -32,16 +38,16 @@ const MailchimpCustomForm = ({ status, message, onValidated }) => {
                     sending...
                 </div>
             )}
-            {status === "error" && (
+            {status === "error" && message && (
                 <div
                     className="mc__alert mc__alert--error"
-                    dangerouslySetInnerHTML={{ __html: message }}
+                    dangerouslySetInnerHTML={{ __html: message.toString() }}
                 />
             )}
-            {status === "success" && (
+            {status === "success" && message && (
                 <div
                     className="mc__alert mc__alert--success"
-                    dangerouslySetInnerHTML={{ __html: message }}
+                    dangerouslySetInnerHTML={{ __html: message.toString() }}
                 />
             )}
 
